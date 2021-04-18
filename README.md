@@ -1,2 +1,2 @@
 # Moderato
-Moderate program for moderate people
+A moderate program for moderate people.
