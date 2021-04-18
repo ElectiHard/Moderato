@@ -1,15 +1,10 @@
+import {Link} from "react-router-dom";
+import navBar from '../navbar.js'
+
 export default function Landing() {
     return (
     <div className = "main-page">
-        <div className="header">
-            <div></div><div></div><div>
-                <input 
-                className = "searchbar"
-                placeholder = "type to search for products"
-                type = "search">
-                </input>
-            </div><div></div><div></div>
-        </div>
+        {navBar}
         <div className="body">
             <div className = "left-column">
                 <div className="category-menu">
