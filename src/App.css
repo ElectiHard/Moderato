@@ -103,3 +103,41 @@ body{
   margin: 10px;
   border: 1px solid black;
 }
+
+.signUpContainer{
+  display: block;
+  align-items: center;
+  margin-top: 10vh;
+  flex-wrap: wrap;
+  width: 60vw;
+  margin: auto;
+  margin-top: 5vh;
+}
+
+.loginBar{
+  border: 1px solid #999;
+  margin: 13px;
+  padding: 0.5rem;
+  width: 75%;
+  max-width: 750px;
+  border-radius: 15px;
+  outline: none;
+  margin-left:40%;
+  transform: translate(-50%);
+}
+
+.signUpContainer button{
+  margin: 13px;
+  padding: 0.5rem;
+  width: 20%;
+  max-width: 750px;
+  border-radius: 15px;
+  outline: none;
+  margin-left:40%;
+  transform: translate(-50%);
+}
+
+.logoImage{
+  max-width: 100%;
+  max-height: 100%;
+}

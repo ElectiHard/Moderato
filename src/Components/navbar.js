@@ -1,9 +1,14 @@
 import {Link} from 'react-router-dom'
+import img from './logo.jpg'
 
 function navBar(){
 return(
 <div className="header">
-            <div></div><div></div><div>
+            <div>
+                <Link to = "/">
+                    <img className="logoImage" alt="logo" src={img}></img> 
+                </Link>
+            </div><div></div><div>
                 <input 
                 className = "searchbar"
                 placeholder = "type to search for products"
