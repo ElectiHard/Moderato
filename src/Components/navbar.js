@@ -4,6 +4,7 @@ import img from './logo.jpg'
 function navBar(){
 return(
 <div className="header">
+            <div></div>
             <div>
                 <Link to = "/">
                     <img className="logoImage" alt="logo" src={img}></img> 
@@ -24,6 +25,7 @@ return(
             <div>
                 
             </div>
+            <div></div>
         </div>)
 }
 

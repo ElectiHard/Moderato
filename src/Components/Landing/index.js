@@ -6,6 +6,7 @@ export default function Landing() {
     <div className = "main-page">
         {navBar}
         <div className="body">
+            <div></div>
             <div className = "left-column">
                 <div className="category-menu">
                 <ul><b>Categories</b>
@@ -32,7 +33,10 @@ export default function Landing() {
                 <div className="local-offer"></div>
                 <div className="local-offer"></div>
                 <div className="local-offer"></div>
+                <div className="local-offer"></div>
+                <div className="local-offer"></div>
             </div>
+            <div></div>
         </div>
     </div>)
 }
