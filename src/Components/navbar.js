@@ -1,32 +1,31 @@
-import {Link} from 'react-router-dom'
-import img from './logo.jpg'
+import { Link } from 'react-router-dom'
 
-function navBar(){
-return(
-<div className="header">
-            <div></div>
-            <div>
-                <Link to = "/">
-                    <img className="logoImage" alt="logo" src={img}></img> 
-                </Link>
-            </div><div></div><div>
-                <input 
-                className = "searchbar"
-                placeholder = "type to search for products"
-                type = "search">
-                </input>
+function navBar() {
+    return (
+        <div className="header">
+            <div className="header-center">
+                <div></div>
+                <div className="logo">
+                    <Link to="/">
+                        Moderato
+                    </Link>
+                </div>
+                <div>
+                    <input
+                        className="searchbar"
+                        placeholder="type to search for products"
+                        type="search">
+                    </input>
+                </div>
+                <div>
+                    account balance:
+                </div>
+                <div>
+                    <Link className="profile-btn" to="/SignUp">profile</Link>
+                </div>
             </div>
-            <div>
-                account balance:
-            </div>
-            <div>
-                <Link className = "profile-btn" to = "/SignUp">profile</Link>
-            </div>
-            <div>
-                
-            </div>
-            <div></div>
-        </div>)
+        </div>
+    )
 }
 
 export default navBar();
