@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-export default function SignUp() {
+export default function LogIn() {
   return (
     <Formik
       initialValues={{
