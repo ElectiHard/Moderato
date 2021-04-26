@@ -4,6 +4,7 @@ import * as Yup from "yup";
 
 export default function LogIn() {
   return (
+
     <Formik
       initialValues={{
         firstName: "",
@@ -25,9 +26,14 @@ export default function LogIn() {
           .oneOf([Yup.ref("password"), null], "Passwords must match")
           .required("Confirm Password is required"),
       })}
+
       onSubmit={(fields) => {
+        fetch("http://localhost:5000/books")
+          .then(res => res.json())
+          .then(books => console.log('Books fetched.. ', books));
         alert("SUCCESS!! :-)\n\n" + JSON.stringify(fields, null, 4));
       }}
+
       render={({ errors, status, touched }) => (
         <Form>
           <div className="form-group">
