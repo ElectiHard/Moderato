@@ -1,5 +1,6 @@
 import navBar from '../navbar.js'
 import footer from '../footer.js'
+import { Link } from 'react-router-dom'
 
 export default function Landing() {
     return (
@@ -9,16 +10,14 @@ export default function Landing() {
                 <div className="left-column">
                     <div className="category-menu">
                         <div className="category-menu-title"><b>Categories</b></div>
-                        <ul>
-                            <li>Electronics</li>
-                            <li>Furniture</li>
-                            <li>Fashion</li>
-                            <li>Health</li>
-                            <li>Sport</li>
-                            <li>Kids</li>
-                            <li>Beauty</li>
-                            <li>Cars</li>
-                        </ul>
+                        <Link to="/">Electronics</Link>
+                        <Link to="/">Furniture</Link>
+                        <Link to="/">Fashion</Link>
+                        <Link to="/">Health</Link>
+                        <Link to="/">Sport</Link>
+                        <Link to="/">Kids</Link>
+                        <Link to="/">Beauty</Link>
+                        <Link to="/">Cars</Link>
                     </div>
                 </div>
                 <div className="center">
