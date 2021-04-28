@@ -8,7 +8,8 @@ export default function Landing() {
             <div className="body">
                 <div className="left-column">
                     <div className="category-menu">
-                        <ul><b>Categories</b>
+                        <div className="category-menu-title"><b>Categories</b></div>
+                        <ul>
                             <li>Electronics</li>
                             <li>Furniture</li>
                             <li>Fashion</li>
@@ -21,13 +22,14 @@ export default function Landing() {
                     </div>
                 </div>
                 <div className="center">
-                    <div className="main"><b>Welcome</b></div>
-                    <div className="main"><b>Electronics</b></div>
-                    <div className="main"><b>Furniture</b></div>
-                    <div className="main"><b>Fashion</b></div>
-                    <div className="main"><b>Health</b></div>
+                    <div className="main"><div className="category-menu-title"><b>Welcome</b></div></div>
+                    <div className="main"><div className="category-menu-title"><b>Electronics</b></div></div>
+                    <div className="main"><div className="category-menu-title"><b>Furniture</b></div></div>
+                    <div className="main"><div className="category-menu-title"><b>Fashion</b></div></div>
+                    <div className="main"><div className="category-menu-title"><b>Health</b></div></div>
                 </div>
                 <div className="right-column">
+                    <div className="category-menu-title"><b>Local offers</b></div>
                     <div className="local-offer"></div>
                     <div className="local-offer"></div>
                     <div className="local-offer"></div>

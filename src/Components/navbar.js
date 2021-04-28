@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom'
 function LoggedIn(props) {
     const isLoggedIn = props.isLoggedIn;
     if (isLoggedIn) {
-      return(
-          <div>pfp and name given in signup</div>
-      );
+        return (
+            <div>pfp and name given in signup</div>
+        );
     }
-    return(
+    return (
         <div>
-            <Link className="profile-btn" to="/SignUp">SignUp</Link><br/>
+            <Link className="profile-btn" to="/SignUp">SignUp</Link><br />
             <Link className="profile-btn" to="/LogIn">Log In</Link>
         </div>
     );
-  }
+}
 
 function navBar() {
     return (
@@ -36,7 +36,7 @@ function navBar() {
                     account balance:
                 </div>
                 <div>
-                    <LoggedIn isLoggedIn={false}/>
+                    <LoggedIn isLoggedIn={false} />
                 </div>
             </div>
         </div>
