@@ -2,6 +2,7 @@
   width: 350px;
   height: auto;
   margin: auto;
+  margin-top: 60px;
   text-align: center;
   background-color: white;
   font-size: 25px;
@@ -9,6 +10,7 @@
   border: 1px solid #4059ad;
   border-radius: 15px;
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);
+  padding-top: 15px;
 }
 
 .form-group {
@@ -17,7 +19,8 @@
 }
 
 .form-group-exception {
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
 
 .some-text {
@@ -27,11 +30,14 @@
 .invalid-feedback {
   color: red;
   font-size: 12px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
 }
 .form-control {
   border: none;
   margin: 3px;
-  padding: 4px;
+  padding: 4px 10px;
   width: 60%;
   border-radius: 15px;
   outline: none;
@@ -58,22 +64,24 @@
 
 @media screen and (max-width: 500px) {
     .sign-up-form {
+      margin-top: 0px;
       font-size: 30px;
-      width: 100vw;
-      height: 100vh;
-      border-radius: 0px;
+      width: calc(100vw - 30px);
+      height:  calc(100vh - 30px);
+      border: none;
+      border-radius: 0%;
       display: flex;
       justify-content: space-around;
+      padding: 15px;
     }
     .form-control {
-    
-      width: 100%;
+      padding: 4px 10px;
+      width: 90%;
       border: none;
-      margin: 0px;
-      padding: 4px;
       border-radius: 15px;
       outline: none;
       margin-left: 50%;
       display: flex;
+      color: white;
     }
   }
