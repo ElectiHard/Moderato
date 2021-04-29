@@ -1,7 +1,6 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import "./styles.css";
 
 export default function SignUp() {
   return (
@@ -117,7 +116,7 @@ export default function SignUp() {
             <div className="form-group">
               <button type="submit" className="submit">
                 Register
-              </button><br/>
+              </button><br />
               <div className="have-an-account">Already have an account?</div>
             </div>
           </Form>

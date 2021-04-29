@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { FaDollarSign, FaUser } from "react-icons/fa";
 
 function LoggedIn(props) {
     const isLoggedIn = props.isLoggedIn;
@@ -8,35 +9,37 @@ function LoggedIn(props) {
         );
     }
     return (
-        <div>
-            <Link className="profile-btn" to="/SignUp">SignUp</Link><br />
-        </div>
+        <Link to="/SignUp">
+            <div className="header-icon">
+                <FaUser />
+            </div>
+        </Link>
     );
 }
 
 function navBar() {
     return (
         <div className="header">
-            <div className="header-center">
-                <div></div>
-                <div className="logo">
-                    <Link to="/">
-                        Moderato
+            <div></div>
+            <div className="logo">
+                <Link to="/">
+                    Moderato
                     </Link>
+            </div>
+            <div>
+                <input
+                    className="searchbar"
+                    placeholder="Type to search for products"
+                    type="search">
+                </input>
+            </div>
+            <Link to="/">
+                <div className="header-icon">
+                    <FaDollarSign />
                 </div>
-                <div>
-                    <input
-                        className="searchbar"
-                        placeholder="type to search for products"
-                        type="search">
-                    </input>
-                </div>
-                <div>
-                    account balance:
-                </div>
-                <div className="logged-in">
-                    <LoggedIn isLoggedIn={false} />
-                </div>
+            </Link>
+            <div>
+                <LoggedIn isLoggedIn={false} />
             </div>
         </div>
     )
