@@ -10,7 +10,6 @@ function LoggedIn(props) {
     return (
         <div>
             <Link className="profile-btn" to="/SignUp">SignUp</Link><br />
-            <Link className="profile-btn" to="/LogIn">Log In</Link>
         </div>
     );
 }
@@ -35,7 +34,7 @@ function navBar() {
                 <div>
                     account balance:
                 </div>
-                <div>
+                <div className="logged-in">
                     <LoggedIn isLoggedIn={false} />
                 </div>
             </div>
