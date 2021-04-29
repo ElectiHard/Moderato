@@ -97,7 +97,7 @@ export default function SignUp() {
               />
             </div>
             <div className="form-group">
-              <div className="some-text">By clicking "Register" you agree to the <a>Privacy Policy</a> (link to be) and to agree content and promotional materials.</div>
+              <div className="some-text">By clicking "Register" you agree to almost everything including our <a>Privacy Policy</a> (link to be) and promotional content via e-mail.</div>
               <button type="submit" className="submit">
                 Register
               </button><br />
