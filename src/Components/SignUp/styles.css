@@ -1,0 +1,17 @@
+.sign-up-form {
+    width: 25vw;
+    height: 80vh;
+    margin: auto;
+    text-align: center;
+    background-color: #cccccc;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-group {
+    padding: 10px;
+}
+
+#ErrorMessage {
+    color: red;
+}
