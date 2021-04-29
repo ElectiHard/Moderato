@@ -1,20 +1,19 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import './styles.css';
 
 export default function SignUp() {
   return (
     <Formik
       initialValues={{
-        firstName: "",
-        lastName: "",
+        username: "",
         email: "",
         password: "",
         confirmPassword: "",
       }}
       validationSchema={Yup.object().shape({
-        firstName: Yup.string().required("First Name is required"),
-        lastName: Yup.string().required("Last Name is required"),
+        username: Yup.string().required("Username is required"),
         email: Yup.string()
           .email("Email is invalid")
           .required("Email is required"),
@@ -32,33 +31,17 @@ export default function SignUp() {
         <div className="sign-up-form">
           <Form>
             <div className="form-group">
-              <div className="better-label">First Name</div>
+              <div className="better-label">Username</div>
               <Field
-                name="firstName"
+                name="username"
                 type="text"
                 className={
                   "form-control" +
-                  (errors.firstName && touched.firstName ? " is-invalid" : "")
+                  (errors.username && touched.username ? " is-invalid" : "")
                 }
               />
               <ErrorMessage
-                name="firstName"
-                component="div"
-                className="invalid-feedback"
-              />
-            </div>
-            <div className="form-group">
-              <div className="better-label">Last Name</div>
-              <Field
-                name="lastName"
-                type="text"
-                className={
-                  "form-control" +
-                  (errors.lastName && touched.lastName ? " is-invalid" : "")
-                }
-              />
-              <ErrorMessage
-                name="lastName"
+                name="username"
                 component="div"
                 className="invalid-feedback"
               />
@@ -95,7 +78,7 @@ export default function SignUp() {
                 className="invalid-feedback"
               />
             </div>
-            <div className="form-group">
+            <div className="form-group-exception">
               <div className="better-label">Confirm Password</div>
               <Field
                 name="confirmPassword"
@@ -114,10 +97,11 @@ export default function SignUp() {
               />
             </div>
             <div className="form-group">
+              <div className="some-text">By clicking "Register" you agree to the <a>Privacy Policy</a> (link to be) and to agree content and promotional materials.</div>
               <button type="submit" className="submit">
                 Register
               </button><br />
-              <div className="have-an-account">Already have an account?</div>
+              <div className="some-text">Already have an account? <a>Sign in</a></div>
             </div>
           </Form>
         </div>
