@@ -1,13 +1,10 @@
 import React from "react";
-import navBar from '../navbar.js'
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import './styles.css';
 
 export default function SignUp() {
   return (
-    <>
-    {navBar}
     <Formik
       initialValues={{
         username: "",
@@ -110,6 +107,5 @@ export default function SignUp() {
         </div>
       )}
     />
-    </>
   );
 }
