@@ -115,12 +115,10 @@ export default function SignUp() {
               />
             </div>
             <div className="form-group">
-              <button type="submit" className="btn btn-primary mr-2">
+              <button type="submit" className="submit">
                 Register
-              </button>
-              <button type="reset" className="btn btn-secondary">
-                Reset
-              </button>
+              </button><br/>
+              <div className="have-an-account">Already have an account?</div>
             </div>
           </Form>
         </div>
