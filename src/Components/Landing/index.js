@@ -12,53 +12,37 @@ export default function Landing() {
 
                 </div>
                 <div className="category-section">
-                    <Link to="/">
-                        <div className="category">
-                            <FaLaptop />
-                            <div className="tooltiptext">Electronics</div>
-                        </div>
+                    <Link to="/" className="category">
+                        <FaLaptop />
+                        <div className="tooltiptext">Electronics</div>
                     </Link>
-                    <Link to="/">
-                        <div className="category">
-                            <FaCouch />
-                            <div className="tooltiptext">Furniture</div>
-                        </div>
+                    <Link to="/" className="category">
+                        <FaCouch />
+                        <div className="tooltiptext">Furniture</div>
                     </Link>
-                    <Link to="/">
-                        <div className="category">
-                            <FaTshirt />
-                            <div className="tooltiptext">Fashion</div>
-                        </div>
+                    <Link to="/" className="category">
+                        <FaTshirt />
+                        <div className="tooltiptext">Fashion</div>
                     </Link>
-                    <Link to="/">
-                        <div className="category">
-                            <FaFirstAid />
-                            <div className="tooltiptext">Health</div>
-                        </div>
+                    <Link to="/" className="category">
+                        <FaFirstAid />
+                        <div className="tooltiptext">Health</div>
                     </Link>
-                    <Link to="/">
-                        <div className="category">
-                            <FaBasketballBall />
-                            <div className="tooltiptext">Sport</div>
-                        </div>
+                    <Link to="/" className="category">
+                        <FaBasketballBall />
+                        <div className="tooltiptext">Sport</div>
                     </Link>
-                    <Link to="/">
-                        <div className="category">
-                            <FaBabyCarriage />
-                            <div className="tooltiptext">Kids</div>
-                        </div>
+                    <Link to="/" className="category">
+                        <FaBabyCarriage />
+                        <div className="tooltiptext">Kids</div>
                     </Link>
-                    <Link to="/">
-                        <div className="category">
-                            <FaSprayCan />
-                            <div className="tooltiptext">Beauty</div>
-                        </div>
+                    <Link to="/" className="category">
+                        <FaSprayCan />
+                        <div className="tooltiptext">Beauty</div>
                     </Link>
-                    <Link to="/">
-                        <div className="category">
-                            <FaCar />
-                            <div className="tooltiptext">Cars</div>
-                        </div>
+                    <Link to="/" className="category">
+                        <FaCar />
+                        <div className="tooltiptext">Cars</div>
                     </Link >
                 </div >
             </div >
