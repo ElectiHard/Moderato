@@ -180,6 +180,8 @@ body{
     font-size: 15px;
 }
 
+
+
 @media screen and (max-width: 500px) {
     .sign-up-form {
       font-size: 30px;

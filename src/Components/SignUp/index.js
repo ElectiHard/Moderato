@@ -3,11 +3,15 @@ import navBar from '../navbar.js'
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import './styles.css';
+import Tabs from "../Tabs"; 
 
 export default function SignUp() {
   return (
     <>
     {navBar}
+    <div className="sign-up-form">
+    <Tabs>
+    <div label = "Sign Up" className="left-tab">
     <Formik
       initialValues={{
         username: "",
@@ -31,7 +35,7 @@ export default function SignUp() {
         alert("SUCCESS!! :-)\n\n" + JSON.stringify(fields, null, 4));
       }}
       render={({ errors, status, touched }) => (
-        <div className="sign-up-form">
+        <div>
           <Form>
             <div className="form-group">
               <div className="better-label">Username</div>
@@ -107,9 +111,17 @@ export default function SignUp() {
               <div className="some-text">Already have an account? <a>Sign in</a></div>
             </div>
           </Form>
-        </div>
+          </div> 
+
+    
       )}
     />
+     </div>
+    <div label = "Sign In">
+      HELLO DARKNESS MY OLD FRIEND
+    </div>
+    </Tabs>
+    </div>
     </>
-  );
+  )
 }
