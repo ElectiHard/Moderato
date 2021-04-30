@@ -14,12 +14,12 @@
 }
 
 .form-group {
-  padding-top: 15px;
+  padding-top: 10px;
   padding-bottom: 20px;
 }
 
 .form-group-exception {
-  padding-bottom: 15px;
+  padding-bottom: 5px;
 }
 
 .some-text {
@@ -29,9 +29,6 @@
 .invalid-feedback {
   color: red;
   font-size: 12px;
-  position: absolute;
-  left:50%;
-  transform: translate(-50%);
 }
 .form-control {
   border: none;
@@ -58,14 +55,14 @@
   font-size: 16px;
 }
 .some-text {
-  padding-top: 5px;
-  font-size: 15px;
+    padding-top: 5px;
+    font-size: 15px;
 }
 
 @media screen and (max-width: 500px) {
     .sign-up-form {
       font-size: 30px;
-      width: 100vw;
+      width: auto;
       height: 100vh;
       border-radius: 0px;
       display: flex;
@@ -82,5 +79,6 @@
       outline: none;
       margin-left: 50%;
       display: flex;
+      border: 1px solid #dddddd;
     }
-}
+  }
