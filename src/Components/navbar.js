@@ -26,13 +26,11 @@ function navBar() {
                     Moderato
                     </Link>
             </div>
-            <div>
-                <input
-                    className="searchbar"
-                    placeholder="Type to search for products"
-                    type="search">
-                </input>
-            </div>
+            <input
+                className="searchbar"
+                placeholder="Type to search for products"
+                type="search">
+            </input>
             <Link to="/">
                 <div className="header-icon">
                     <FaDollarSign />

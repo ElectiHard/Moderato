@@ -25,7 +25,7 @@ export default function SignUp() {
           .required("Confirm Password is required"),
       })}
       onSubmit={(fields) => {
-        alert("SUCCESS!! :-)\n\n" + JSON.stringify(fields, null, 4));
+        alert("brawo, działa\n\n" + JSON.stringify(fields, null, 4));
       }}
       render={({ errors, status, touched }) => (
         <div className="sign-up-form">
