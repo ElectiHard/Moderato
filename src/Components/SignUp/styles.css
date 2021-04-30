@@ -9,6 +9,8 @@
   border: 1px solid #4059ad;
   border-radius: 15px;
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);
+
+  transform: translate(0%, 35%);
 }
 
 .form-group {
@@ -67,10 +69,11 @@
       border-radius: 0px;
       display: flex;
       justify-content: space-around;
+
+      transform: translate(0%, 0%);
     }
     .form-control {
-    
-      width: 100%;
+      width: 60%;
       border: none;
       margin: 0px;
       padding: 4px;

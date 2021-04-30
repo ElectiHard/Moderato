@@ -47,6 +47,7 @@ body{
 }
 
 .header-icon:hover svg{
+  transition: 0.2s;
   fill: #ffffff;
   background-color: #083D77;
 }
@@ -106,6 +107,7 @@ body{
 }
 
 .category:hover {
+  transition: 0.2s;
   background-color: #083D77;
 }
 
@@ -116,6 +118,7 @@ body{
 }
 
 .category:hover svg{
+  transition: 0.2s;
   fill: #ffffff;
 }
 
@@ -130,74 +133,3 @@ body{
 .category:hover .tooltiptext {
   visibility: visible;
 }
-
-/* ------------------- */
-
-.sign-up-form {
-  width: 350px;
-  height: auto;
-  margin: auto;
-  text-align: center;
-  background-color: white;
-  font-size: 25px;
-  font-family: "Roboto", sans-serif;
-  border: 1px solid #4059ad;
-  border-radius: 15px;
-}
-
-.form-group {
-  padding-top: 10px;
-  padding-bottom: 20px;
-}
-
-.invalid-feedback {
-  color: red;
-  font-size: 12px;
-}
-.form-control {
-  border: none;
-  margin: 3px;
-  padding: 4px;
-  width: 60%;
-  border-radius: 15px;
-  outline: none;
-  margin-left: 50%;
-  transform: translate(-50%);
-}
-
-.submit {
-  background-color: #4059ad;
-  border-radius: 15px;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-}
-.have-an-account {
-    padding-top: 5px;
-    font-size: 15px;
-}
-
-@media screen and (max-width: 500px) {
-    .sign-up-form {
-      font-size: 30px;
-      width: 100vw;
-      height: 100vh;
-      border-radius: 0px;
-      display: flex;
-      justify-content: space-around;
-    }
-    .form-control {
-
-      width: 100%;
-      border: none;
-      margin: 0px;
-      padding: 4px;
-      border-radius: 15px;
-      outline: none;
-      margin-left: 50%;
-      display: flex;
-    }
-  }
