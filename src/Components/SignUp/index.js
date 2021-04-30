@@ -3,11 +3,15 @@ import navBar from '../navbar.js'
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import './styles.css';
+import Tabs from "../Tabs"; 
 
 export default function SignUp() {
   return (
     <>
     {navBar}
+    <div className="sign-up-form">
+    <Tabs>
+    <div label = "Sign Up" className="left-tab">
     <Formik
       initialValues={{
         username: "",
@@ -27,12 +31,11 @@ export default function SignUp() {
           .oneOf([Yup.ref("password"), null], "Passwords must match")
           .required("Confirm Password is required"),
       })}
-      onSubmit={(values, {resetForm }) => {
-        alert("brawo, działa\n\n" + JSON.stringify(values, null, 4));
-        resetForm();
+      onSubmit={(fields) => {
+        alert("SUCCESS!! :-)\n\n" + JSON.stringify(fields, null, 4));
       }}
       render={({ errors, status, touched }) => (
-        <div className="sign-up-form">
+        <div>
           <Form>
             <div className="form-group">
               <div className="better-label">Username</div>
@@ -102,15 +105,23 @@ export default function SignUp() {
             </div>
             <div className="form-group">
               <div className="some-text">By clicking "Register" you agree to almost everything including our <a>Privacy Policy</a> (link to be) and promotional content via e-mail.</div>
-              <button type="submit" className="submit" >
+              <button type="submit" className="submit">
                 Register
               </button><br />
-              <div className="some-text">Already have an account? <a href="./LogIn">Sign in</a></div>
+              <div className="some-text">Already have an account? <a>Sign in</a></div>
             </div>
           </Form>
-        </div>
+          </div> 
+
+    
       )}
     />
+     </div>
+    <div label = "Sign In">
+      HELLO DARKNESS MY OLD FRIEND
+    </div>
+    </Tabs>
+    </div>
     </>
-  );
+  )
 }

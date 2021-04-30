@@ -31,7 +31,7 @@ function navBar() {
                 placeholder="Type to search for products"
                 type="search">
             </input>
-            <Link to="/">
+            <Link to="/Creator">
                 <div className="header-icon">
                     <FaDollarSign />
                 </div>
