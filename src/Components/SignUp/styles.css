@@ -12,12 +12,12 @@
 }
 
 .form-group {
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 20px;
 }
 
 .form-group-exception {
-  padding-bottom: 5px;
+  padding-bottom: 15px;
 }
 
 .some-text {
@@ -27,6 +27,9 @@
 .invalid-feedback {
   color: red;
   font-size: 12px;
+  position: absolute;
+  left:50%;
+  transform: translate(-50%);
 }
 .form-control {
   border: none;
