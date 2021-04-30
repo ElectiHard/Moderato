@@ -55,29 +55,30 @@
   font-size: 16px;
 }
 .some-text {
-  padding-top: 5px;
-  font-size: 15px;
+    padding-top: 5px;
+    font-size: 15px;
 }
 
 @media screen and (max-width: 500px) {
-  .sign-up-form {
-    font-size: 30px;
-    width: 100vw;
-    height: 100vh;
-    border-radius: 0px;
-    display: flex;
-    justify-content: space-around;
-    transform: translate(0%, 0%);
+    .sign-up-form {
+      font-size: 30px;
+      width: auto;
+      height: 100vh;
+      border-radius: 0px;
+      display: flex;
+      justify-content: space-around;
+
+      transform: translate(0%, 0%);
+    }
+    .form-control {
+      width: 60%;
+      border: none;
+      margin: 0px;
+      padding: 4px;
+      border-radius: 15px;
+      outline: none;
+      margin-left: 50%;
+      display: flex;
+      border: 1px solid #dddddd;
+    }
   }
-  .form-control {
-    width: 60%;
-    border: none;
-    margin: 0px;
-    padding: 4px;
-    border-radius: 15px;
-    outline: none;
-    margin-left: 50%;
-    display: flex;
-    border: 1px solid #dddddd;
-  }
-}
