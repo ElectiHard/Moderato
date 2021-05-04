@@ -6,8 +6,10 @@
   background-color: white;
   font-size: 25px;
   font-family: "Roboto", sans-serif;
-  border-width:0px 1px 1px 1px;
+  border-color: #000;
+  border-width:1px 1px 1px 1px;
   border-radius: 15px;
+  border: 1px solid black;
   margin-top: 60px;
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);
 }
@@ -68,29 +70,42 @@
   width: 100%;
   height: auto;
   border-bottom: 1px solid #ccc;
-  border-right: 1px;
 }
 
 .tab-list-item {
   height: calc(100% + 10px);
-  width: calc(50% - 2px);
+  width: calc(50% - 3px);
   display: inline-block;
   list-style: none;
   margin-bottom: -1px;
   padding-bottom: 10px;
   padding-top: 10px;
-  border-width: 1px;
-  border:1px solid #ccc;
 }
 
-.tab-list-active {
-  background-color: white;
+#left-tab.tab-list-active{
+  border: solid white;
+  border-width: 1px 1px 1px 1px; 
+  border-right-color: #ccc;
+}
+#right-tab.tab-list-active {
+  border: solid white;
+  border-width: 1px 1px 1px 1px; 
+}
+
+#left-tab{
+  border: 1px solid white;
+  border-bottom-color: #ccc;
+  border-right-color: #ccc;
+  border-width: 0px 1px 0px 0px  solid #ccc;
   border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border: solid #ccc;
-  border-width: 1px 1px 0px 1px;
 }
-
+#right-tab {
+  border: 1px solid white;
+  border-bottom-color: #ccc;
+  border-width: 0px 0px 0px 0px  solid #ccc;
+  border-top-right-radius: 15px;
+  
+}
 /*-----------------*/
 
 @media screen and (max-width: 500px) {

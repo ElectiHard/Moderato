@@ -11,7 +11,7 @@ export default function SignUp() {
     {navBar}
     <div className="sign-up-form">
     <Tabs>
-    <div label = "Sign Up" className="left-tab">
+    <div label = "Sign Up" id = "left-tab">
     <Formik
       initialValues={{
         username: "",
@@ -117,7 +117,7 @@ export default function SignUp() {
       )}
     />
      </div>
-    <div label = "Sign In">
+    <div label = "Sign In" id = "right-tab">
       HELLO DARKNESS MY OLD FRIEND
     </div>
     </Tabs>

@@ -5,12 +5,10 @@ class Tab extends Component {
     static propTypes = {
       activeTab: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
       onClick: PropTypes.func.isRequired,
     };
-    constructor(props) {
-      super(props);
-      this.state={LID:1}
-   }
+    
     onClick = () => {
       const { label, onClick } = this.props;
       onClick(label);
@@ -28,24 +26,23 @@ class Tab extends Component {
         props: {
           activeTab,
           label,
+          id,
         },
       } = this;
   
       let className = 'tab-list-item';
-    
-  
       if (activeTab === label) {
         className += ' tab-list-active';
       }
   
       return (
-        <li
+        <div
           className={className}
           onClick={onClick}
-          id={this.test}
+          id={id}
         >
           {label}
-        </li>
+        </div>
       );
     }
   }
