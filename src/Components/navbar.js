@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { FaDollarSign, FaUser } from "react-icons/fa";
+import '../App.css';
 
 function LoggedIn(props) {
     const isLoggedIn = props.isLoggedIn;
@@ -9,10 +10,8 @@ function LoggedIn(props) {
         );
     }
     return (
-        <Link to="/SignUp">
-            <div className="header-icon">
-                <FaUser />
-            </div>
+        <Link to="/SignUp" className="header-icon">
+            <FaUser />
         </Link>
     );
 }
@@ -29,12 +28,11 @@ function navBar() {
             <input
                 className="searchbar"
                 placeholder="Type to search for products"
-                type="search">
+                type="search"
+            >
             </input>
-            <Link to="/Creator">
-                <div className="header-icon">
-                    <FaDollarSign />
-                </div>
+            <Link to="/Creator" className="header-icon">
+                <FaDollarSign />
             </Link>
             <div>
                 <LoggedIn isLoggedIn={false} />

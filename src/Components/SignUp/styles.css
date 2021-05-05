@@ -6,10 +6,7 @@
   background-color: white;
   font-size: 25px;
   font-family: "Roboto", sans-serif;
-  border-color: #000;
-  border-width:1px 1px 1px 1px;
   border-radius: 15px;
-  border: 1px solid black;
   margin-top: 60px;
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);
 }
@@ -26,7 +23,7 @@
 }
 
 .some-text {
-  padding: 10px;
+  padding: 30px;
 }
 
 .invalid-feedback {
@@ -39,18 +36,16 @@
 .form-control {
   border: none;
   margin: 3px;
-  padding: 4px 10px;
+  padding: 6px 12px;
   width: 60%;
-  border-radius: 15px;
+  border-radius: 20px;
   outline: none;
-  left: 50%;
-  transform: translate(-50%);
   background-color: #eeeeee;
   color: black;
 }
 
 .submit {
-  background-color: #4059ad;
+  background-color: #083D77;
   border-radius: 15px;
   border: none;
   color: white;
@@ -69,7 +64,7 @@
 .tab-list {  
   width: 100%;
   height: auto;
-  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
 }
 
 .tab-list-item {

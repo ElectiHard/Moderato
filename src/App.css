@@ -27,13 +27,13 @@ body{
 }
 
 .searchbar {
-  margin: 10px;
   width: 55%;
   background-color: #eeeeee;
   border: none;
-  padding: 1rem;
+  padding: 0.5rem 15px;
   border-radius: 30px;
   outline: none;
+  margin: 5px;
 }
 
 .header-icon svg{
@@ -44,7 +44,7 @@ body{
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);
   padding: 5px;
   border-radius: 30px;
-  margin: 10px;
+  margin: 5px;
 }
 
 .header-icon:hover svg{
