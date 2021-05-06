@@ -1,25 +1,23 @@
 .sign-up-box {
-      margin-top: 60px;
-      font-size: 24px;
-      width: 350px;
-      height: 100%;
-      margin-left:auto;
-      margin-right:auto;
-      border: none;
-      display: flex;
-      justify-content: space-around;
-      box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);      
-    }
+  margin-top: 60px;
+  font-size: 24px;
+  width: 350px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  justify-content: space-around;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);
+}
 
 .sign-up-form {
- padding-top:20px;
+  padding-top: 20px;
   height: auto;
   text-align: center;
   background-color: white;
   font-size: 25px;
   font-family: "Roboto", sans-serif;
 }
-
 
 .form-group {
   padding-top: 15px;
@@ -40,7 +38,7 @@
   color: red;
   font-size: 12px;
   position: absolute;
-  left:50%;
+  left: 50%;
   transform: translate(-50%);
 }
 .form-control {
@@ -54,18 +52,17 @@
   color: black;
 }
 .form-control:focus {
-  border: 1px solid #083D77;
+  border: 1px solid #083d77;
 }
 
-
 .some-text {
-    padding-top: 5px;
-    font-size: 15px;
-    user-select: none;
+  padding-top: 5px;
+  font-size: 15px;
+  user-select: none;
 }
 /*-----------------*/
 
-.tab-list {  
+.tab-list {
   width: 100%;
   height: auto;
 }
@@ -84,50 +81,50 @@
   border-bottom: 4px solid white;
 }
 
-.tab-list-inactive{
+.tab-list-inactive {
   transition: 0.2s;
 }
 
-.tab-list-inactive:hover{
-  transition:0.2s;
-  border-bottom-color:#ebebeb;
+.tab-list-inactive:hover {
+  transition: 0.2s;
+  border-bottom-color: #ebebeb;
 }
-.tab-list-active{
-  transition:0.2s;
-  border-bottom-color:#083D77;
+.tab-list-active {
+  transition: 0.2s;
+  border-bottom-color: #083d77;
 }
 /*-----------------*/
 
 @media screen and (max-width: 450px) {
-  body{
+  body {
     scrollbar-width: 0;
   }
-  .tab-list-item{
+  .tab-list-item {
     padding-bottom: 20px;
   }
-  .sign-up-form{
+  .sign-up-form {
     margin-top: 7px;
     width: 100vw;
   }
-    .sign-up-box {
-      margin-top: 7px;
-      font-size: 23px;
-      width: auto;
-      height: 100%;
-      border: none;
-      border-radius: 0%;
-      display: flex;
-      justify-content: space-around;
-      padding: 15px;      
-    }
-    .form-control {
-      margin-left: 50%;
-      transform: translate(-50%);
-      padding: 4px 10px;
-      width: 85%;
-      border: none;
-      border-radius: 15px;
-      outline: none;
-      display: flex;
-    }
+  .sign-up-box {
+    margin-top: 7px;
+    font-size: 23px;
+    width: auto;
+    height: 100%;
+    border: none;
+    border-radius: 0%;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+  }
+  .form-control {
+    margin-left: 50%;
+    transform: translate(-50%);
+    padding: 4px 10px;
+    width: 85%;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    display: flex;
+  }
 }
