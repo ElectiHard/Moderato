@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Ripple from 'react-ripples'
 
 class Tab extends Component {
     static propTypes = {
@@ -14,12 +15,6 @@ class Tab extends Component {
       onClick(label);
     }
 
-
-    test=(e)=>{
-      let {LID} = this.state;
-      this.setState({LID:LID+1})
-      
-   }
     render() {
       const {
         onClick,
@@ -33,16 +28,15 @@ class Tab extends Component {
       let className = 'tab-list-item';
       if (activeTab === label) {
         className += ' tab-list-active';
-      }
+      }else {className+= ' tab-list-inactive'}
   
       return (
-        <div
-          className={className}
-          onClick={onClick}
-          id={id}
-        >
+        <Ripple during={1300} color={'rgba(200,200,200,0.1)'}
+        className={className}
+        onClick={onClick}
+        id={id}>
           {label}
-        </div>
+        </Ripple>
       );
     }
   }

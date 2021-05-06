@@ -9,6 +9,10 @@ body{
 
 /* ------------------- */
 
+.login {
+  position:relative
+}
+
 .header {
   width: 900px;
   margin: auto;
@@ -63,16 +67,16 @@ body{
 
 @media screen and (max-width: 920px){
   .main {
-    width: 100vw;
+    width: auto;
     margin: 0;
   }
 
   .header {
-    width: 100vw;
+    width: auto;
   }
 }
 
-@media screen and (max-width: 610px){
+@media screen and (max-width: 450px){
   .logo {
     display: none;
   }
@@ -133,4 +137,15 @@ body{
 
 .category:hover .tooltiptext {
   visibility: visible;
+}
+
+
+#floatingRectangle {
+  z-index: 1;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background-color: #000;
+  color: white;
+  padding: 0;
 }
