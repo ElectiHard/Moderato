@@ -4,6 +4,15 @@ import { Link } from 'react-router-dom'
 import { FaLaptop, FaCouch, FaTshirt, FaFirstAid, FaBasketballBall, FaBabyCarriage, FaSprayCan, FaCar } from "react-icons/fa";
 
 export default function Landing() {
+    function category(icon, text, path = "") {
+        return (
+            <Link to={`/${path}`} className="category">
+                {icon}
+                <div className="tooltiptext">{text}</div>
+            </Link>
+        );
+    }
+
     return (
         <>
             {navBar}
@@ -12,38 +21,14 @@ export default function Landing() {
 
                 </div>
                 <div className="category-section">
-                    <Link to="/" className="category">
-                        <FaLaptop />
-                        <div className="tooltiptext">Electronics</div>
-                    </Link>
-                    <Link to="/" className="category">
-                        <FaCouch />
-                        <div className="tooltiptext">Furniture</div>
-                    </Link>
-                    <Link to="/" className="category">
-                        <FaTshirt />
-                        <div className="tooltiptext">Fashion</div>
-                    </Link>
-                    <Link to="/" className="category">
-                        <FaFirstAid />
-                        <div className="tooltiptext">Health</div>
-                    </Link>
-                    <Link to="/" className="category">
-                        <FaBasketballBall />
-                        <div className="tooltiptext">Sport</div>
-                    </Link>
-                    <Link to="/" className="category">
-                        <FaBabyCarriage />
-                        <div className="tooltiptext">Kids</div>
-                    </Link>
-                    <Link to="/" className="category">
-                        <FaSprayCan />
-                        <div className="tooltiptext">Beauty</div>
-                    </Link>
-                    <Link to="/" className="category">
-                        <FaCar />
-                        <div className="tooltiptext">Cars</div>
-                    </Link >
+                    {category(FaLaptop(), 'Electronics')}
+                    {category(FaCouch(), 'Furniture')}
+                    {category(FaTshirt(), 'Fashion')}
+                    {category(FaFirstAid(), 'Health')}
+                    {category(FaBasketballBall(), 'Sport')}
+                    {category(FaBabyCarriage(), 'Kids')}
+                    {category(FaSprayCan(), 'Beauty')}
+                    {category(FaCar(), 'Cars')}
                 </div >
             </div >
             {footer}
