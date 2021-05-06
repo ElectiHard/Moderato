@@ -27,7 +27,7 @@
 }
 
 .form-group-exception {
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 15px;
 }
 
@@ -36,6 +36,7 @@
 }
 
 .invalid-feedback {
+  padding-top: 5px;
   user-select: none;
   color: red;
   font-size: 12px;
