@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { FaDollarSign, FaUser } from "react-icons/fa";
-import profileBox from './ProfileBox'
 import '../App.css';
 
 function LoggedIn(props) {
@@ -37,7 +36,6 @@ function navBar() {
             </Link>
             <div classname="login">
                 <LoggedIn isLoggedIn={false} />
-                {profileBox}
             </div>
         </div>
     )

@@ -9,7 +9,6 @@
       margin-left:auto;
       margin-right:auto;
       border: none;
-      display: flex;
       justify-content: space-around;
       box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);     
       border-radius: 20px; 
