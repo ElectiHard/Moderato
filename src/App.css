@@ -23,6 +23,7 @@ body{
 }
 
 .logo a{
+  user-select: none;
   font-family: 'Varela Round', sans-serif;
   font-size: 50px;
   color: #202020;
@@ -31,6 +32,7 @@ body{
 }
 
 .searchbar {
+  user-select: none;
   width: 55%;
   background-color: #eeeeee;
   border: none;
