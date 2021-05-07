@@ -18,71 +18,109 @@ export default function Creator() {
   return (
     <>
       {navBar}
-      <div className="main">
-        <div className="welcome"></div>
-        <div className="category-section">
-          <div className="title">
-            <input type="text" id="title" name="title" placeholder="Title" />
-          </div>
-          <div className="type">
-            <div className="dropdown">
-              <button className="dropdown-button">Dropdown</button>
-              <div className="dropdown-content">
-                <button>Electronics</button>
-                <button>Furniture</button>
-                <button>Fashion</button>
-                <button>Health</button>
-                <button>Sport</button>
-                <button>Kids</button>
-                <button>Beauty</button>
-                <button>Cars</button>
-              </div>
-            </div>
-          </div>
-          <div className="pictures">
-            <div className="App">
-              <ImageUploading
-                multiple
-                value={images}
-                onChange={onChange}
-                maxNumber={maxNumber}
-                dataURLKey="data_url"
-              >
-                {({
-                  imageList,
-                  onImageUpload,
-                  onImageRemove,
-                  isDragging,
-                  dragProps,
-                }) => (
-                  // write your building UI
-                  <div className="upload__image-wrapper">
-                    <button
-                      style={isDragging ? { color: "red" } : undefined}
-                      onClick={onImageUpload}
-                      {...dragProps}
-                    >
-                      <FaFolderPlus />
-                    </button>
-                    {imageList.map((image, index) => (
-                      <div key={index} className="image-item">
-                        <img src={image["data_url"]} alt="" width="100" />
-                        <div className="image-item__btn-wrapper">
-                          <button onClick={() => onImageRemove(index)}>
-                            Remove
-                          </button>
-                        </div>
-                      </div>
-                    ))}
+      <div className="creator">
+        <div className="title">
+          <input
+            type="text"
+            id="title-input"
+            name="title-input"
+            placeholder="Title e.g siodło z dyskontu"
+          />
+        </div>
+        <div className="pictures">
+          <ImageUploading
+            multiple
+            value={images}
+            onChange={onChange}
+            maxNumber={maxNumber}
+            dataURLKey="data_url"
+          >
+            {({
+              imageList,
+              onImageUpload,
+              onImageRemove,
+              isDragging,
+              dragProps,
+            }) => (
+              // write your building UI
+              <div className="photo-upload">
+                <button
+                  className="photo-upload-btn"
+                  style={isDragging ? { color: "red" } : undefined}
+                  onClick={onImageUpload}
+                  {...dragProps}
+                >
+                  <FaFolderPlus />
+                  <div className="photo-text">&nbsp;Click or drag</div>
+                </button>
+                {imageList.map((image, index) => (
+                  <div key={index} className="image-item">
+                    <img src={image["data_url"]} alt="" width="100" />
+                    <div className="image-item__btn-wrapper">
+                      <button onClick={() => onImageRemove(index)}>
+                        Remove
+                      </button>
+                    </div>
                   </div>
-                )}
-              </ImageUploading>
+                ))}
+              </div>
+            )}
+          </ImageUploading>
+        </div>
+        <div className="description">
+          <textarea
+            maxLength="250"
+            autoFocus
+            required
+            name="description-input"
+            placeholder="Sprzedam siodło z dyskontu"
+          ></textarea>
+        </div>
+        <div className="contact-location">
+          <input
+            type="text"
+            id="email-contact"
+            name="email-contact"
+            placeholder="e-mail"
+          />
+          <input
+            type="text"
+            id="phone-contact"
+            name="phone-contact"
+            placeholder="phone number"
+          />
+          <input
+            type="text"
+            id="city-location"
+            name="city-location"
+            placeholder="city"
+          />
+          <input
+            type="text"
+            id="phone-location"
+            name="phone-location"
+            placeholder="phone number"
+          />
+        </div>
+        <div className="category-submit"></div>
+        <div className="category-section">
+          <div className="dropdown">
+            <button className="dropdown-button">Dropdown</button>
+            <div className="dropdown-content">
+              <button>Electronics</button>
+              <button>Furniture</button>
+              <button>Fashion</button>
+              <button>Health</button>
+              <button>Sport</button>
+              <button>Kids</button>
+              <button>Beauty</button>
+              <button>Cars</button>
             </div>
           </div>
-          <div className="publish">
+          <button type="submit" className="publish">
             <FaArrowCircleUp />
             <div className="tooltiptext-creator">Publish</div>
-          </div>
+          </button>
         </div>
       </div>
       {footer}
