@@ -76,34 +76,33 @@ export default function Creator() {
             placeholder="Sprzedam siodło z dyskontu"
           ></textarea>
         </div>
-        <div className="contact-location">
-          <input
-            type="text"
-            id="email-contact"
-            name="email-contact"
-            placeholder="e-mail"
-          />
-          <input
-            type="text"
-            id="phone-contact"
-            name="phone-contact"
-            placeholder="phone number"
-          />
-          <input
-            type="text"
-            id="city-location"
-            name="city-location"
-            placeholder="city"
-          />
-          <input
-            type="text"
-            id="phone-location"
-            name="phone-location"
-            placeholder="phone number"
-          />
-        </div>
-        <div className="category-submit"></div>
-        <div className="category-section">
+        <div className="creator-bottom">
+          <div className="contact-location">
+            <input
+              type="text"
+              id="email-contact"
+              name="email-contact"
+              placeholder="e-mail"
+            />
+            <input
+              type="text"
+              id="phone-contact"
+              name="phone-contact"
+              placeholder="phone number"
+            />
+            <input
+              type="text"
+              id="city-location"
+              name="city-location"
+              placeholder="city"
+            />
+            <input
+              type="text"
+              id="phone-location"
+              name="phone-location"
+              placeholder="phone number"
+            />
+          </div>
           <div className="dropdown">
             <button className="dropdown-button">Dropdown</button>
             <div className="dropdown-content">
@@ -123,7 +122,7 @@ export default function Creator() {
           </button>
         </div>
       </div>
-      {footer}
+      { footer}
     </>
   );
 }
