@@ -1,9 +1,8 @@
-.sign-up-ripple-div{
+.sign-up-ripple {
     display: 'inline-flex';
     width: 70%;
-    border-radius: 25;
+    border-radius: 25px;
     overflow: 'hidden';
-    background-color: red;
 }
 
 .submit-sign-up-button {

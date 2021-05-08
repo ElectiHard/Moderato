@@ -78,7 +78,7 @@
 }
 
 .contact-location {
-  flex: 0 1 50%;
+  flex: 1 1 50%;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
@@ -91,8 +91,7 @@
 
 .contact-location input {
   outline: none;
-  flex: 1 1 100px;
-  height: 20px;
+  flex: 1 1 70px;
   border: none;
   color: black;
   background-color: #eeeeee;
@@ -112,7 +111,7 @@
 }
 
 .publish {
-  flex: 1 1 40px;
+  flex: 1 1 150px;
   background-color: #ffffff;
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);
   border-radius: 15px;
@@ -149,59 +148,6 @@
 .publish:hover .tooltiptext-creator {
   color: #ffffff;
 }
-
-/****************/
-
-.dropdown-button {
-  margin: auto;
-  background-color: #ffffff;
-  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);
-  border: none;
-  border-radius: 15px;
-  padding: 20px;
-  display: flex;
-  cursor: pointer;
-}
-
-.dropdown-button:hover {
-  transition: 0.2s;
-  background-color: #eeeeee;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #ffffff;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 0px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #eeeeee;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/******************/
 
 .photo-upload-btn {
   border: none;

@@ -103,19 +103,6 @@ export default function Creator() {
               placeholder="phone number"
             />
           </div>
-          <div className="dropdown">
-            <button className="dropdown-button">Dropdown</button>
-            <div className="dropdown-content">
-              <button>Electronics</button>
-              <button>Furniture</button>
-              <button>Fashion</button>
-              <button>Health</button>
-              <button>Sport</button>
-              <button>Kids</button>
-              <button>Beauty</button>
-              <button>Cars</button>
-            </div>
-          </div>
           <button type="submit" className="publish">
             <FaArrowCircleUp />
             <div className="tooltiptext-creator">Publish</div>
