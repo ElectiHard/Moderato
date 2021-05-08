@@ -11,7 +11,6 @@
   justify-content: space-around;
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);     
   border-radius: 20px; 
-
 }
 
 .sign-up-form {
@@ -34,6 +33,7 @@
 }
 
 .some-text {
+  margin-top: 20px;
   padding: 30px;
 }
 
@@ -88,12 +88,8 @@
   user-select: none;
   justify-content: center;
   width: 50%;
-  display: inline-block;
-  list-style: none;
-  margin-bottom: -1px;
   padding-bottom: 10px;
   padding-top: 10px;
-  border-bottom: 4px solid white;
 }
 /*-----------------*/
 

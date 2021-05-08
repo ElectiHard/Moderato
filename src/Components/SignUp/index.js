@@ -1,12 +1,12 @@
 import { React, useState } from "react";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import Button from '@material-ui/core/Button';
 import navBar from "../navbar.js";
 import "./signupbutton.css";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "./styles.css";
-import Ripples from "react-ripples";
 
 function TabPanel({ children, value, index }) {
   return <>{value === index && <div>{children}</div>}</>;
@@ -111,21 +111,10 @@ export default function SignUp() {
                     </div>
                     <div className="form-group">
 
-                      <Ripples
-                        className="sign-up-ripple"
-                        during={1800}
-                        color={"rgba(3, 37, 73,0.2)"}
-                      >
-                        <button
-                          type="button"
-                          className="submit-sign-up-button"
-                        >
-                          Register
-                          </button>
-                      </Ripples>
+                      <Button className="submit-sign-up-button">
+                        <div>Register</div>
+                      </Button>
 
-                      <br />
-                      <br />
                       <div className="some-text">
                         By clicking "Register" you agree to almost everything
                           including our <a>Privacy Policy</a> (link to be) and
@@ -196,20 +185,9 @@ export default function SignUp() {
                       />
                     </div>
                     <div className="form-group">
-                      <Ripples
-                        className="sign-up-ripple"
-                        during={1800}
-                        color={"rgba(3, 37, 73,0.2)"}
-                      >
-                        <button
-                          type="button"
-                          className="submit-sign-up-button"
-                        >
-                          Sign In
-                          </button>
-                      </Ripples>
-                      <br />
-                      <br />
+                      <Button variant="outlined" backgroundColor="#083D77" className="submit-sign-up-button">
+                        <div>Sign In</div>
+                      </Button>
                       <div className="some-text">
                         Forgot password?
                           <a style={{ color: "#083D77", textDecoration: "none" }} href='./'> Reset!</a>

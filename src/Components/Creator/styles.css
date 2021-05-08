@@ -13,17 +13,42 @@
 
 /******************/
 
-.title {
+.creator-header {
   display: flex;
-  color: #ffffff;
-  padding: 20px;
+  padding: 10px 10px 30px;
   border-radius: 15px;
   margin-bottom: 20px;
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);
+  gap: 10px;
+}
+.creator-header div{
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  flex: 1 1 60%;
+}
+
+.creator-category{
+  flex: 1 1 40%;
+}
+
+.creator-header label{
+  padding: 5px;
+  color: #202020;
 }
 
 .title input {
-  width: 100%;
+  border: none;
+  outline: none;
+  color: black;
+  background-color: #eeeeee;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.creator-category input {
   border: none;
   outline: none;
   color: black;
@@ -48,7 +73,7 @@
 
 .description {
   display: flex;
-  padding: 10px;
+  padding: 30px 10px;
   color: #ffffff;
   border-radius: 15px;
   margin-bottom: 20px;
@@ -56,7 +81,7 @@
 }
 
 .description textarea {
-  width: 100%;
+  width: 60%;
   height: 5rem;
   border: none;
   outline: none;

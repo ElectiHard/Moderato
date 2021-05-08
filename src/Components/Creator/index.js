@@ -19,13 +19,25 @@ export default function Creator() {
     <>
       {navBar}
       <div className="creator">
-        <div className="title">
-          <input
-            type="text"
-            id="title-input"
-            name="title-input"
-            placeholder="Title e.g siodło z dyskontu"
-          />
+        <div className="creator-header">
+          <div className="title">
+            <label>Title</label>
+            <input
+              type="text"
+              id="title-input"
+              name="title-input"
+              placeholder="Title e.g siodło z dyskontu"
+            />
+          </div>
+          <div className="creator-category">
+            <label>Category</label>
+            <input
+              type="text"
+              id="title-input"
+              name="title-input"
+              placeholder="Title e.g siodło z dyskontu"
+            />
+          </div>
         </div>
         <div className="pictures">
           <ImageUploading
