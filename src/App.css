@@ -9,12 +9,18 @@ body{
 
 /* ------------------- */
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 .login {
-  position:relative
+  position:relative;
+  order: 3;
 }
 
 .header {
   width: 900px;
+  align-items: center;
   margin: auto;
   padding: 10px;
   display: flex;
@@ -40,6 +46,8 @@ body{
   border-radius: 30px;
   outline: none;
   margin: 5px;
+  flex: 1;
+  width:100%;
 }
 
 .header-icon svg{
@@ -51,12 +59,14 @@ body{
   padding: 5px;
   border-radius: 30px;
   margin: 5px;
+  order: 2;
 }
 
 .header-icon:hover svg{
   transition: 0.2s;
   fill: #ffffff;
   background-color: #083D77;
+  cursor:pointer;
 }
 
 /* ------------------- */
@@ -74,17 +84,36 @@ body{
   }
 
   .header {
+    flex-wrap: wrap;
     width: auto;
+
+    /* flex-direction: column; */
+  }
+  .logo{
+    order: 0 !important;
+  }
+  /* .header-icon, .login {
+    order: 1 !important;
+  } */
+  .searchbar {
+    width: auto;
+    /* order: 2 !important; */
   }
 }
 
-@media screen and (max-width: 450px){
-  .logo {
-    display: none;
+@media screen and (max-width: 588px){
+  .header {
+    flex-wrap: wrap;
   }
-
+  .logo{
+    order: 0 !important;
+  }
+  .header-icon, .login {
+    order: 1 !important;
+  }
   .searchbar {
-    width: 60%;
+    width: auto;
+    order: 2 !important;
   }
 }
 

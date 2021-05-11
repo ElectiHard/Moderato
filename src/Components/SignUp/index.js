@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Button from '@material-ui/core/Button';
-import navBar from "../navbar.js";
+import signUpNavBar from "../signupnavbar.js";
 import "./signupbutton.css";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -21,7 +21,7 @@ export default function SignUp() {
 
   return (
     <>
-      {navBar}
+      {signUpNavBar}
       <div className="sign-up-box">
         <Tabs className="tab-list" value={value} onChange={handleChange}>
           <Tab className="tab-list-item" label="Sign Up" />

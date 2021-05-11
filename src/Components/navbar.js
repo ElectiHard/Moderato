@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { FaDollarSign, FaUser } from "react-icons/fa";
+import CustomizedMenus from "./ProfileMenu"
 import '../App.css';
 
 function LoggedIn(props) {
@@ -23,7 +24,7 @@ function navBar() {
             <div className="logo">
                 <Link to="/">
                     Moderato
-                    </Link>
+                </Link>
             </div>
             <input
                 className="searchbar"
@@ -31,11 +32,13 @@ function navBar() {
                 type="search"
             >
             </input>
+            <div>
             <Link to="/Creator" className="header-icon">
                 <FaDollarSign />
             </Link>
+            </div>
             <div classname="login">
-                <LoggedIn isLoggedIn={false} />
+                <CustomizedMenus />
             </div>
         </div>
     )

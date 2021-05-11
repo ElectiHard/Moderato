@@ -15,11 +15,11 @@
 
 .creator-header {
   display: flex;
-  padding: 10px 10px 30px;
+  padding: 10px 20px 30px;
   border-radius: 15px;
   margin-bottom: 20px;
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);
-  gap: 10px;
+  gap: 30px;
 }
 .creator-header div{
   display: flex;
