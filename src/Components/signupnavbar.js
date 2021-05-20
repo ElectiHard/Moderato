@@ -1,18 +1,17 @@
 import { Link } from 'react-router-dom'
-import { FaDollarSign, FaUser } from "react-icons/fa";
 import '../App.css';
 
 
 function signUpNavBar() {
     return (
-            <div className="logo"
+        <div className="logo"
             style={
-                {paddingLeft:"30px"}
+                { paddingLeft: "30px" }
             }>
-                <Link to="/">
-                    Moderato
+            <Link to="/">
+                Moderato
                 </Link>
-            </div>
+        </div>
     )
 }
 

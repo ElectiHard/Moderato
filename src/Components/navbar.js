@@ -20,7 +20,7 @@ function LoggedIn(props) {
 function navBar() {
     return (
         <div className="header">
-            <div></div>
+
             <div className="logo">
                 <Link to="/">
                     Moderato
@@ -32,13 +32,15 @@ function navBar() {
                 type="search"
             >
             </input>
-            <div>
-            <Link to="/Creator" className="header-icon">
-                <FaDollarSign />
-            </Link>
-            </div>
-            <div classname="login">
-                <CustomizedMenus />
+            <div className="icons">
+                <div>
+                    <Link to="/Creator" className="header-icon">
+                        <FaDollarSign />
+                    </Link>
+                </div>
+                <div classname="login">
+                    <CustomizedMenus />
+                </div>
             </div>
         </div>
     )

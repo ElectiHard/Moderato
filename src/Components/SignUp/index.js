@@ -8,6 +8,25 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "./styles.css";
 
+const SignUpBox = ((props) => (
+  <div style={
+    {
+      userSelect: "none",
+      backgroundColor: "white",
+      marginTop: "60px",
+      fontSize: "24px",
+      width: "350px",
+      height: "100%",
+      marginLeft: "auto",
+      marginRight: "auto",
+      border: "none",
+      justifyContent: "space-around",
+      boxShadow: "6px 6px 20px rgba(122, 122, 122, 0.4)",
+      borderRadius: "20px"
+    }}
+  />
+));
+
 function TabPanel({ children, value, index }) {
   return <>{value === index && <div>{children}</div>}</>;
 }
@@ -90,7 +109,7 @@ export default function SignUp() {
                         className="invalid-feedback"
                       />
                     </div>
-                    <div className="form-group-exception">
+                    <div className="form-group">
                       <div className="better-label"></div>
                       <Field
                         name="confirmPassword"
