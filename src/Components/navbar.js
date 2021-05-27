@@ -17,15 +17,13 @@ function LoggedIn(props) {
     );
 }
 
-function navBar() {
+export default function navBar() {
     return (
         <div className="header">
 
-            <div className="logo">
-                <Link to="/">
-                    Moderato
-                </Link>
-            </div>
+            <Link to="/" className="logo">
+                Moderato
+            </Link>
             <input
                 className="searchbar"
                 placeholder="Type to search for products"
@@ -45,5 +43,3 @@ function navBar() {
         </div>
     )
 }
-
-export default navBar();

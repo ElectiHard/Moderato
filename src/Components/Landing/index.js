@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { FaLaptop, FaCouch, FaTshirt, FaFirstAid, FaBasketballBall, FaBabyCarriage, FaSprayCan, FaCar } from "react-icons/fa";
 import ScrollContainer from 'react-indiana-drag-scroll';
-import { DvrOutlined } from '@material-ui/icons';
 
 
 export default function Landing() {
@@ -14,8 +13,7 @@ export default function Landing() {
     function category(icon, text, path = "") {
         return (
             <Link to={`/${path}`} className="category"
-                style={{ backgroundColor: color }}
-                onMouseEnter={e => { e.target.style.backgroundColor = colorArray[Math.floor(Math.random() * colorArray.length)]; }}
+                onMouseEnter={e => { e.target.style.backgroundColor = colorArray[Math.floor(Math.random() * colorArray.length)] }}
                 onMouseLeave={e => { e.target.style.backgroundColor = "" }}
             >
                 {icon}
@@ -26,13 +24,12 @@ export default function Landing() {
 
     return (
         <>
-            {navBar}
+            {navBar()}
             <div className="main">
                 <div className="welcome">
-
                 </div>
                 <div className="category-section">
-                    {category(FaLaptop(), 'Electronics')}
+                    {category(<FaLaptop />, 'Electronics')}
                     {category(FaCouch(), 'Furniture')}
                     {category(FaTshirt(), 'Fashion')}
                     {category(FaFirstAid(), 'Health')}
@@ -40,7 +37,7 @@ export default function Landing() {
                     {category(FaBabyCarriage(), 'Kids')}
                     {category(FaSprayCan(), 'Beauty')}
                     {category(FaCar(), 'Cars')}
-                </div >
+                </div>
                 <div className="drag-list">
                     <div className="drag-title">Electronics</div>
                     <ScrollContainer className="drag-container">

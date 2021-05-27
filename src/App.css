@@ -28,7 +28,7 @@ body{
   gap: 5px
 }
 
-.logo a{
+.logo {
   user-select: none;
   font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: 50px;

@@ -4,14 +4,9 @@ import '../App.css';
 
 function signUpNavBar() {
     return (
-        <div className="logo"
-            style={
-                { paddingLeft: "30px" }
-            }>
-            <Link to="/">
-                Moderato
-                </Link>
-        </div>
+        <Link to="/" className="logo" style={{ paddingLeft: "30px" }}>
+            Moderato
+        </Link>
     )
 }
 

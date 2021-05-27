@@ -1,9 +1,10 @@
 import navBar from "../navbar.js";
 import footer from "../footer.js";
-import { FaArrowCircleUp, FaFolderPlus } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 import "./styles.css";
 import React from "react";
 import ImageUploading from "react-images-uploading";
+import Button from '@material-ui/core/Button';
 
 export default function Creator() {
   const [images, setImages] = React.useState([]);
@@ -17,7 +18,7 @@ export default function Creator() {
 
   return (
     <>
-      {navBar}
+      {navBar()}
       <div className="creator">
         <div className="creator-header">
           <div className="title">
@@ -55,15 +56,14 @@ export default function Creator() {
               dragProps,
             }) => (
               // write your building UI
-              <div className="photo-upload">
+              <>
                 <button
                   className="photo-upload-btn"
                   style={isDragging ? { color: "red" } : undefined}
                   onClick={onImageUpload}
                   {...dragProps}
                 >
-                  <FaFolderPlus />
-                  <div className="photo-text">&nbsp;Click or drag</div>
+                  <FaPlus />
                 </button>
                 {imageList.map((image, index) => (
                   <div key={index} className="image-item">
@@ -75,7 +75,7 @@ export default function Creator() {
                     </div>
                   </div>
                 ))}
-              </div>
+              </>
             )}
           </ImageUploading>
         </div>
@@ -87,8 +87,6 @@ export default function Creator() {
             name="description-input"
             placeholder="Sprzedam siodło z dyskontu"
           ></textarea>
-        </div>
-        <div className="creator-bottom">
           <div className="contact-location">
             <input
               type="text"
@@ -114,11 +112,10 @@ export default function Creator() {
               name="phone-location"
               placeholder="phone number"
             />
+            <Button className="submit-sign-up-button">
+              <div>Publish</div>
+            </Button>
           </div>
-          <button type="submit" className="publish">
-            <FaArrowCircleUp />
-            <div className="tooltiptext-creator">Publish</div>
-          </button>
         </div>
       </div>
       { footer}
