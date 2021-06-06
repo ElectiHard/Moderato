@@ -174,10 +174,8 @@ export default function SignUp() {
                 password: Yup.string()
                   .required("Password is required"),
               })}
-              onSubmit={(fields) => {
-                alert("SUCCESS!! :-)\n\n" + JSON.stringify(fields, null, 4));
-              }}
-              render={({ errors, status, touched }) => (
+              onSubmit={login}
+              render={({ errors, status, touched, isSubmitting, handleChange, handleBlur, handleSubmit, values }) => (
                 <div>
                   <Form>
                     <div className="form-group">
@@ -192,6 +190,9 @@ export default function SignUp() {
                             ? " is-invalid"
                             : "")
                         }
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.username}
                       />
                       <ErrorMessage
                         name="username"
@@ -212,6 +213,9 @@ export default function SignUp() {
                             ? " is-invalid"
                             : "")
                         }
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.password}
                       />
                       <ErrorMessage
                         name="password"
@@ -220,7 +224,7 @@ export default function SignUp() {
                       />
                     </div>
                     <div className="form-group">
-                      <Button className="submit-sign-up-button">
+                      <Button className="submit-sign-up-button" type="submit" disabled={isSubmitting}>
                         <div>Sign In</div>
                       </Button>
                       <div className="some-text">

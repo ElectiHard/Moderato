@@ -29,7 +29,7 @@ export default function Landing() {
                 <div className="welcome">
                 </div>
                 <div className="category-section">
-                    {category(<FaLaptop />, 'Electronics')}
+                    {category(FaLaptop(), 'Electronics')}
                     {category(FaCouch(), 'Furniture')}
                     {category(FaTshirt(), 'Fashion')}
                     {category(FaFirstAid(), 'Health')}
