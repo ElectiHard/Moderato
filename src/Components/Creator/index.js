@@ -1,10 +1,18 @@
 import navBar from "../navbar.js";
 import footer from "../footer.js";
-import { FaPlus } from "react-icons/fa";
+import { FaFolderMinus, FaFolderPlus } from "react-icons/fa";
 import "./styles.css";
 import React from "react";
 import ImageUploading from "react-images-uploading";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
+
+const btnChanger = (a) => {
+  if (a != 5) {
+    return <FaFolderPlus />;
+  } else {
+    return <FaFolderMinus />;
+  }
+};
 
 export default function Creator() {
   const [images, setImages] = React.useState([]);
@@ -47,6 +55,7 @@ export default function Creator() {
             onChange={onChange}
             maxNumber={maxNumber}
             dataURLKey="data_url"
+            resolutionType="ratio"
           >
             {({
               imageList,
@@ -59,20 +68,20 @@ export default function Creator() {
               <>
                 <button
                   className="photo-upload-btn"
-                  style={isDragging ? { color: "red" } : undefined}
                   onClick={onImageUpload}
                   {...dragProps}
                 >
-                  <FaPlus />
+                  {btnChanger(imageList.length)}
                 </button>
                 {imageList.map((image, index) => (
                   <div key={index} className="image-item">
-                    <img src={image["data_url"]} alt="" width="100" />
-                    <div className="image-item__btn-wrapper">
-                      <button onClick={() => onImageRemove(index)}>
-                        Remove
-                      </button>
-                    </div>
+                    <img src={image["data_url"]} alt="" width="33%" />
+                    <button
+                      onClick={() => onImageRemove(index)}
+                      className="remove-btn"
+                    >
+                      Remove
+                    </button>
                   </div>
                 ))}
               </>
@@ -118,7 +127,7 @@ export default function Creator() {
           </div>
         </div>
       </div>
-      { footer}
+      {footer}
     </>
   );
 }
