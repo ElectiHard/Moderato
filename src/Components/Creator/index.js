@@ -116,10 +116,10 @@ export default function Creator() {
               placeholder="city"
             />
             <input
-              type="text"
-              id="phone-location"
-              name="phone-location"
-              placeholder="phone number"
+              type="number"
+              id="price"
+              name="price"
+              placeholder="price"
             />
             <Button className="submit-sign-up-button">
               <div>Publish</div>
