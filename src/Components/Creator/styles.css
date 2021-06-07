@@ -62,7 +62,8 @@
 .pictures {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
+  gap: 10px;
   color: #ffffff;
   height: 400px;
   border-radius: 15px;
@@ -92,10 +93,11 @@
   border: dashed 4px #dddddd;
   border-radius: 15px;
   display: flex;
+  justify-content: center;
 }
 
 img {
-  width: 100%;
+  width: auto;
   border-radius: 15px;
 }
 

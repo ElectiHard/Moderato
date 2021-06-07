@@ -148,18 +148,18 @@ body{
 .category:hover {
   padding-top: 20px;
   transition: 0.2s;
-  /* background-color: #083D77; */
+  background-color: #083D77;
 }
 
 .category svg {
   width: 80px;
   height: 70px;
-  fill: #202020;
+  color: #202020;
 }
 
 .category:hover svg{
   transition: 0.2s;
-  fill: #ffffff;
+  color: #ffffff;
 }
 
 .tooltiptext {
