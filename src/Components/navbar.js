@@ -1,21 +1,7 @@
 import { Link } from 'react-router-dom'
-import { FaDollarSign, FaUser } from "react-icons/fa";
+import { GiMagnifyingGlass } from "react-icons/gi";
 import CustomizedMenus from "./ProfileMenu"
 import '../App.css';
-
-function LoggedIn(props) {
-    const isLoggedIn = props.isLoggedIn;
-    if (isLoggedIn) {
-        return (
-            <div>pfp and name given in signup</div>
-        );
-    }
-    return (
-        <Link to="/SignUp" className="header-icon">
-            <FaUser />
-        </Link>
-    );
-}
 
 export default function navBar() {
     return (
@@ -31,11 +17,6 @@ export default function navBar() {
             >
             </input>
             <div className="icons">
-                <div>
-                    <Link to="/Creator" className="header-icon">
-                        <FaDollarSign />
-                    </Link>
-                </div>
                 <div classname="login">
                     <CustomizedMenus />
                 </div>
