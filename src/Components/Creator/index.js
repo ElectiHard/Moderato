@@ -5,7 +5,7 @@ import "./styles.css";
 import React from "react";
 import ImageUploading from "react-images-uploading";
 import Button from "@material-ui/core/Button";
-import ScrollContainer from 'react-indiana-drag-scroll';
+import ScrollContainer from "react-indiana-drag-scroll";
 
 const btnChanger = (a) => {
   if (a != 5) {
@@ -49,7 +49,7 @@ export default function Creator() {
             />
           </div>
         </div>
-        <div className="pictures">
+        <div className="creator-pictures">
           <ScrollContainer className="drag-container">
             <ImageUploading
               multiple
@@ -83,7 +83,7 @@ export default function Creator() {
                         className="remove-btn"
                       >
                         Remove
-                    </button>
+                      </button>
                     </div>
                   ))}
                 </>
@@ -118,12 +118,7 @@ export default function Creator() {
               name="city-location"
               placeholder="city"
             />
-            <input
-              type="number"
-              id="price"
-              name="price"
-              placeholder="price"
-            />
+            <input type="number" id="price" name="price" placeholder="price" />
             <Button className="submit-sign-up-button">
               <div>Publish</div>
             </Button>

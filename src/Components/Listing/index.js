@@ -5,18 +5,20 @@ import React from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
 import { Link } from "react-router-dom";
 
+import Images from "./images";
+
 export default function Listing() {
   return (
     <>
       {navBar()}
       <div className="listing">
         <div className="listing-top">
-          <div className="listing-pictures"></div>
+          <div className="listing-pictures">{Images()}</div>
           <div className="listing-title">
             <ht>placeholder title</ht>
           </div>
         </div>
-        <div className="description"></div>
+        <div className="listing-description"></div>
         <div className="drag-list">
           <div className="drag-title">You may also like:</div>
           <ScrollContainer className="drag-container">

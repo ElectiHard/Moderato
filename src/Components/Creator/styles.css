@@ -59,7 +59,7 @@
 
 /******************/
 
-.pictures {
+.creator-pictures {
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
