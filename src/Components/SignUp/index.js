@@ -3,7 +3,7 @@ import { AuthContext } from "../../Context/authContext";
 import { useHistory } from "react-router-dom";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 import signUpNavBar from "../signupnavbar.js";
 import "./signupbutton.css";
 import { Formik, Field, Form, ErrorMessage } from "formik";
@@ -27,16 +27,14 @@ export default function SignUp() {
     fetch("/api/v1/users/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password })
-    })
-      .then(({ status }) => {
-        if (status === 200) {
-          login({ username, password })
-        }
-        else {
-          alert("Ojoj")
-        }
-      })
+      body: JSON.stringify({ username, password }),
+    }).then(({ status }) => {
+      if (status === 200) {
+        login({ username, password });
+      } else {
+        alert("Ojoj");
+      }
+    });
   };
 
   const login = ({ username, password }) => {
@@ -78,7 +76,16 @@ export default function SignUp() {
                   .required("Confirm Password is required"),
               })}
               onSubmit={register}
-              render={({ errors, status, touched, isSubmitting, handleChange, handleBlur, handleSubmit, values }) => (
+              render={({
+                errors,
+                status,
+                touched,
+                isSubmitting,
+                handleChange,
+                handleBlur,
+                handleSubmit,
+                values,
+              }) => (
                 <Form onSubmit={handleSubmit}>
                   <div className="form-group">
                     <Field
@@ -146,16 +153,19 @@ export default function SignUp() {
                     />
                   </div>
                   <div className="form-group">
-
-                    <Button className="submit-sign-up-button" type="submit" disabled={isSubmitting}>
+                    <Button
+                      className="submit-sign-up-button"
+                      type="submit"
+                      disabled={isSubmitting}
+                    >
                       <div>Register</div>
                     </Button>
 
                     <div className="some-text">
                       By clicking "Register" you agree to almost everything
-                          including our <a>Privacy Policy</a> (link to be) and
-                          promotional content via e-mail.
-                        </div>
+                      including our <a>Privacy Policy</a> (link to be) and
+                      promotional content via e-mail.
+                    </div>
                   </div>
                 </Form>
               )}
@@ -171,11 +181,19 @@ export default function SignUp() {
               }}
               validationSchema={Yup.object().shape({
                 username: Yup.string().required("Username is required"),
-                password: Yup.string()
-                  .required("Password is required"),
+                password: Yup.string().required("Password is required"),
               })}
               onSubmit={login}
-              render={({ errors, status, touched, isSubmitting, handleChange, handleBlur, handleSubmit, values }) => (
+              render={({
+                errors,
+                status,
+                touched,
+                isSubmitting,
+                handleChange,
+                handleBlur,
+                handleSubmit,
+                values,
+              }) => (
                 <div>
                   <Form>
                     <div className="form-group">
@@ -224,12 +242,22 @@ export default function SignUp() {
                       />
                     </div>
                     <div className="form-group">
-                      <Button className="submit-sign-up-button" type="submit" disabled={isSubmitting}>
+                      <Button
+                        className="submit-sign-up-button"
+                        type="submit"
+                        disabled={isSubmitting}
+                      >
                         <div>Sign In</div>
                       </Button>
                       <div className="some-text">
                         Forgot password?
-                          <a style={{ color: "#083D77", textDecoration: "none" }} href='./'> Reset!</a>
+                        <a
+                          style={{ color: "#083D77", textDecoration: "none" }}
+                          href="./"
+                        >
+                          {" "}
+                          Reset!
+                        </a>
                       </div>
                     </div>
                   </Form>
