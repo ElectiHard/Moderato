@@ -1,0 +1,16 @@
+.subcategory-list {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);
+}
+
+.subcategory {
+    text-decoration: none;
+    color: #202020
+}
+
+.subcategory:hover {
+    color: #083D77;
+    transition: 0.2s;
+}

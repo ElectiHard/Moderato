@@ -10,6 +10,7 @@ import Landing from './Components/Landing';
 import SignUp from './Components/SignUp';
 import Creator from './Components/Creator'
 import Listing from './Components/Listing'
+import Category from './Components/Category'
 import { AuthContext } from "./Context/authContext";
 
 
@@ -26,6 +27,7 @@ function App() {
               <Route exact path="/SignUp" component={SignUp} />
               <Route exact path="/Creator" component={Creator} />
               <Route exact path="/Listing" component={Listing} />
+              <Route exact path="/Category/:id" component={Category} />
               <Route component={NotFound} />
             </Switch>
           </Suspense>

@@ -16,7 +16,8 @@ export default function Listing() {
             <ht>placeholder title</ht>
           </div>
         </div>
-        <div className="listing-drag-list">
+        <div className="description"></div>
+        <div className="drag-list">
           <div className="drag-title">You may also like:</div>
           <ScrollContainer className="drag-container">
             <Link to="/Creator" className="drag-listing"></Link>
@@ -27,7 +28,6 @@ export default function Listing() {
             <Link to="/Creator" className="drag-listing"></Link>
           </ScrollContainer>
         </div>
-        <div className="description"></div>
       </div>
       {footer}
     </>

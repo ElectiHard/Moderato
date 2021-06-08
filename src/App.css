@@ -83,7 +83,7 @@ body{
   padding: 10px;
 }
 
-@media screen and (max-width: 920px){
+@media screen and (max-width: 936px){
   .main {
     width: auto;
     margin: 0;

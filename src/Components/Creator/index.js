@@ -5,6 +5,7 @@ import "./styles.css";
 import React from "react";
 import ImageUploading from "react-images-uploading";
 import Button from "@material-ui/core/Button";
+import ScrollContainer from 'react-indiana-drag-scroll';
 
 const btnChanger = (a) => {
   if (a != 5) {
@@ -49,44 +50,46 @@ export default function Creator() {
           </div>
         </div>
         <div className="pictures">
-          <ImageUploading
-            multiple
-            value={images}
-            onChange={onChange}
-            maxNumber={maxNumber}
-            dataURLKey="data_url"
-            resolutionType="ratio"
-          >
-            {({
-              imageList,
-              onImageUpload,
-              onImageRemove,
-              isDragging,
-              dragProps,
-            }) => (
-              // write your building UI
-              <>
-                <button
-                  className="photo-upload-btn"
-                  onClick={onImageUpload}
-                  {...dragProps}
-                >
-                  {btnChanger(imageList.length)}
-                </button>
-                {imageList.map((image, index) => (
-                  <div key={index} className="image-item">
-                    <img src={image["data_url"]} alt="" width="33%" />
-                    <button
-                      onClick={() => onImageRemove(index)}
-                      className="remove-btn"
-                    >
-                      Remove
+          <ScrollContainer className="drag-container">
+            <ImageUploading
+              multiple
+              value={images}
+              onChange={onChange}
+              maxNumber={maxNumber}
+              dataURLKey="data_url"
+              resolutionType="ratio"
+            >
+              {({
+                imageList,
+                onImageUpload,
+                onImageRemove,
+                isDragging,
+                dragProps,
+              }) => (
+                // write your building UI
+                <>
+                  <button
+                    className="photo-upload-btn"
+                    onClick={onImageUpload}
+                    {...dragProps}
+                  >
+                    {btnChanger(imageList.length)}
+                  </button>
+                  {imageList.map((image, index) => (
+                    <div key={index} className="image-item">
+                      <img src={image["data_url"]} alt="" width="33%" />
+                      <button
+                        onClick={() => onImageRemove(index)}
+                        className="remove-btn"
+                      >
+                        Remove
                     </button>
-                  </div>
-                ))}
-              </>
-            )}
-          </ImageUploading>
+                    </div>
+                  ))}
+                </>
+              )}
+            </ImageUploading>
+          </ScrollContainer>
         </div>
         <div className="description">
           <textarea
