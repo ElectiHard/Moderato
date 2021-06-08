@@ -1,6 +1,7 @@
 import navBar from "../navbar.js";
 import footer from "../footer.js";
 import "./styles.css";
+import "./stylesgallery.css";
 import React from "react";
 import ScrollContainer from "react-indiana-drag-scroll";
 import { Link } from "react-router-dom";

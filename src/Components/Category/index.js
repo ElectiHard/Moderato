@@ -37,8 +37,39 @@ export default function Category() {
     return (
         <>
             {navBar()}
-            <div className="subcategory-list">
-                {subCategoryList()}
+            <div className="main">
+                <div className="category-front">
+                    <div className="subcategory-list">
+                        {subCategoryList()}
+                    </div>
+                    <div className="category-image">
+
+                    </div>
+                </div>
+                <div className="drag-list">
+                    <div className="drag-title">Laptops</div>
+                    <ScrollContainer className="drag-container">
+                        <Link to="/Creator" className="drag-listing"></Link><Link to="/Creator" className="drag-listing"></Link>
+                        <Link to="/Creator" className="drag-listing"></Link><Link to="/Creator" className="drag-listing"></Link>
+                        <Link to="/Creator" className="drag-listing"></Link><Link to="/Creator" className="drag-listing"></Link>
+                    </ScrollContainer>
+                </div>
+                <div className="drag-list">
+                    <div className="drag-title">Cables</div>
+                    <ScrollContainer className="drag-container">
+                        <Link to="/Creator" className="drag-listing"></Link><Link to="/Creator" className="drag-listing"></Link>
+                        <Link to="/Creator" className="drag-listing"></Link><Link to="/Creator" className="drag-listing"></Link>
+                        <Link to="/Creator" className="drag-listing"></Link><Link to="/Creator" className="drag-listing"></Link>
+                    </ScrollContainer>
+                </div>
+                <div className="drag-list">
+                    <div className="drag-title">Fashion</div>
+                    <ScrollContainer className="drag-container">
+                        <Link to="/Creator" className="drag-listing"></Link><Link to="/Creator" className="drag-listing"></Link>
+                        <Link to="/Creator" className="drag-listing"></Link><Link to="/Creator" className="drag-listing"></Link>
+                        <Link to="/Creator" className="drag-listing"></Link><Link to="/Creator" className="drag-listing"></Link>
+                    </ScrollContainer>
+                </div>
             </div>
         </>
     )

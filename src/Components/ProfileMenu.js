@@ -52,7 +52,7 @@ export default function CustomizedMenus() {
           </ListItemText>
         </MenuItem>
       </Link>
-      
+
     )
   }
   const [dimensions, setDimensions] = React.useState({
@@ -75,8 +75,8 @@ export default function CustomizedMenus() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        {createMenuItem(FaUserPlus(), 'Sign Up', 'SignUp')}
-        {createMenuItem(FaUser(), 'Sign In', 'SignUp')}
+        {createMenuItem(FaUserPlus(), 'Sign Up', 'SignUp/0')}
+        {createMenuItem(FaUser(), 'Sign In', 'SignUp/1')}
         {createMenuItem(MdPlaylistAdd(), 'Creator', 'Creator')}
         {createMenuItem(MdExitToApp(), 'Log Out', 'Creator')}
       </StyledMenu>

@@ -1,6 +1,6 @@
 import { React, useState, useContext } from "react";
 import { AuthContext } from "../../Context/authContext";
-import { useHistory } from "react-router-dom";
+import { Link, useParams, useHistory } from 'react-router-dom'
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Button from "@material-ui/core/Button";
@@ -14,10 +14,13 @@ function TabPanel({ children, value, index }) {
   return <>{value === index && <div>{children}</div>}</>;
 }
 
+
+
 export default function SignUp() {
+  const tab = useParams()
   const authContext = useContext(AuthContext);
   const history = useHistory();
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(Number(tab.tab));
 
   const tabChange = (event, newValue) => {
     setValue(newValue);

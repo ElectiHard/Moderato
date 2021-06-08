@@ -20,7 +20,7 @@ function App() {
           <Suspense fallback={<>Loading...</>}>
             <Switch>
               <Route exact path="/" component={Landing} />
-              <Route exact path="/SignUp" component={SignUp} />
+              <Route exact path="/SignUp/:tab" component={SignUp} />
               <Route exact path="/Creator" component={Creator} />
               <Route exact path="/Listing" component={Listing} />
               <Route exact path="/Panel" component={Panel} />

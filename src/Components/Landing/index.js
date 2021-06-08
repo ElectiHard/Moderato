@@ -2,6 +2,7 @@ import navBar from '../navbar.js'
 import footer from '../footer.js'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import "./styles.css";
 import ScrollContainer from 'react-indiana-drag-scroll';
 
 
