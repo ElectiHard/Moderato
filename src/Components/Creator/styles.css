@@ -146,16 +146,35 @@ img {
   gap: 10px;
 }
 
-.contact-location input {
-  outline: none;
-  flex: 1 1 70px;
-  border: none;
-  color: black;
-  background-color: #eeeeee;
-  padding: 10px;
-  border-radius: 20px;
+.temp1 {
+  width: 100%;
 }
 
+.creator-form {
+  width: 100%;
+  padding: 7px;
+}
+
+.creator-form-control {
+  border: 1px solid #eee;
+  padding: 10px 15px;
+  width: auto;
+  border-radius: 20px;
+  outline: none;
+  background-color: rgb(241, 241, 241);
+  color: black;
+}
+.creator-form-control:focus {
+  border: 1px solid #083d77;
+}
+
+.creator-invalid-feedback {
+  padding-left: 10px;
+  user-select: none;
+  color: red;
+  font-size: 12px;
+  position: absolute;
+}
 /****************/ /***********************/
 /*.dropdown {
   flex: 1 1 100px;

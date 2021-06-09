@@ -7,6 +7,9 @@ import ImageUploading from "react-images-uploading";
 import Button from "@material-ui/core/Button";
 import ScrollContainer from "react-indiana-drag-scroll";
 
+import { Formik, Field, Form, ErrorMessage } from "formik";
+import * as Yup from "yup";
+
 const btnChanger = (a) => {
   if (a != 5) {
     return <FaFolderPlus />;
@@ -100,25 +103,119 @@ export default function Creator() {
             placeholder="Sprzedam siodło z dyskontu"
           ></textarea>
           <div className="contact-location">
-            <input
-              type="text"
-              id="email-contact"
-              name="email-contact"
-              placeholder="e-mail"
+            <Formik
+              initialValues={{
+                email: "",
+                phone: "",
+                city: "",
+                price: "",
+              }}
+              validationSchema={Yup.object().shape({
+                email: Yup.string()
+                  .email("Invalid email")
+                  .required("Email is required"),
+                phone: Yup.string()
+                  .min(9, "Too Short!")
+                  .max(11, "Too Long!")
+                  .required("Required"),
+                city: Yup.string().required("City is required"),
+                price: Yup.string().required("U sure about that?"),
+              })}
+              //onSubmit={}
+              render={({
+                errors,
+                status,
+                touched,
+                isSubmitting,
+                handleChange,
+                handleBlur,
+                handleSubmit,
+                values,
+              }) => (
+                <Form onSubmit={handleSubmit} className="temp1">
+                  <div className="creator-form">
+                    <Field
+                      name="email"
+                      type="text"
+                      placeholder="email"
+                      className={
+                        "creator-form-control" +
+                        (errors.email && touched.email ? " is-invalid" : "")
+                      }
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.email}
+                    />
+                    <ErrorMessage
+                      name="email"
+                      component="div"
+                      className="creator-invalid-feedback"
+                    />
+                  </div>
+
+                  <div className="creator-form">
+                    <Field
+                      name="phone"
+                      type="number"
+                      placeholder="+48..."
+                      className={
+                        "creator-form-control" +
+                        (errors.phone && touched.phone ? " is-invalid" : "")
+                      }
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.phone}
+                    />
+                    <ErrorMessage
+                      name="phone"
+                      component="div"
+                      className="creator-invalid-feedback"
+                    />
+                  </div>
+
+                  <div className="creator-form">
+                    <Field
+                      name="city"
+                      type="text"
+                      placeholder="city"
+                      className={
+                        "creator-form-control" +
+                        (errors.city && touched.city ? " is-invalid" : "")
+                      }
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.city}
+                    />
+                    <ErrorMessage
+                      name="city"
+                      component="div"
+                      className="creator-invalid-feedback"
+                    />
+                  </div>
+
+                  <div className="creator-form">
+                    <Field
+                      name="price"
+                      type="number"
+                      placeholder="price"
+                      className={
+                        "creator-form-control" +
+                        (errors.price && touched.price ? " is-invalid" : "")
+                      }
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.price}
+                    />
+                    <ErrorMessage
+                      name="price"
+                      component="div"
+                      className="creator-invalid-feedback"
+                    />
+                  </div>
+                </Form>
+              )}
             />
-            <input
-              type="text"
-              id="phone-contact"
-              name="phone-contact"
-              placeholder="phone number"
-            />
-            <input
-              type="text"
-              id="city-location"
-              name="city-location"
-              placeholder="city"
-            />
-            <input type="number" id="price" name="price" placeholder="price" />
+
             <Button className="submit-sign-up-button">
               <div>Publish</div>
             </Button>
