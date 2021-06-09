@@ -6,7 +6,6 @@ import React from "react";
 import ImageUploading from "react-images-uploading";
 import Button from "@material-ui/core/Button";
 import ScrollContainer from "react-indiana-drag-scroll";
-
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 

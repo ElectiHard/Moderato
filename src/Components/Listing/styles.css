@@ -4,7 +4,7 @@
   padding: 10px;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 936px) {
   .listing {
     width: auto;
     margin: 0;
@@ -15,16 +15,19 @@
 
 .listing-top {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
 /******************/
 
 .listing-title {
-  width: 30%;
+  padding: 10px;
+  flex: 1 1 175px;
   height: inherit;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   border-radius: 15px;
   margin-bottom: 20px;
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);
@@ -34,7 +37,7 @@
 
 .listing-pictures {
   color: #ffffff;
-  width: 70%;
+  flex: 1 1 65%;
   height: auto;
   border-radius: 15px;
   padding: 0px;

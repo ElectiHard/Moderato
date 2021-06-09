@@ -11,7 +11,7 @@ export default function Landing() {
     const colorArray = ['#0050e6', '#0affeb', '#00e092', '#00cc44', '#4fff38', '#b0ff1f', '#ffda1f', '#ff9633', '#ff481f', '#ff1f26'];
 
     useEffect(() => {
-        fetch('/api/v1/categories')
+        fetch('https://moderato-backend.herokuapp.com/api/v1/categories')
             .then(response => response.json())
             .then(data => setCategoriesList(data.categories));
     }, [])
@@ -36,6 +36,7 @@ export default function Landing() {
             {navBar()}
             <div className="main">
                 <div className="welcome">
+                    <img src="https://i.imgur.com/lNyBCNl.png"></img>
                 </div>
                 <div className="category-section">
                     {category()}

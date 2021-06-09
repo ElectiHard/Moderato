@@ -11,13 +11,13 @@ export default function Category() {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`../api/v1/categories/subcategories/${id}`)
+        fetch(`https://moderato-backend.herokuapp.com/api/v1/categories/${id}/subcategories`)
             .then(response => response.json())
             .then(data => setSubCategories(data.categories));
     }, [])
 
     useEffect(() => {
-        fetch(`../api/v1/listings/category/${id}`)
+        fetch(`https://moderato-backend.herokuapp.com/api/v1/listings/category/${id}`)
             .then(response => response.json())
             .then(data => console.log(data.listings));
     }, [])

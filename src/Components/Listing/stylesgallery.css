@@ -1,10 +1,10 @@
 .image-gallery-icon {
-    color: #fff;
+    color: #cccccc;
     transition: all .3s ease-out;
     appearance: none;
     background-color: transparent;
-    border: 0;
     cursor: pointer;
+    border: none;
     outline: none;
     position: absolute;
     z-index: 4;
@@ -143,7 +143,7 @@
     background: #000; 
 }
 .image-gallery-content .image-gallery-slide .image-gallery-image {
-    max-height: calc(100vh - 80px); 
+    aspect-ratio: 4 / 3;
 }
 .image-gallery-content.left .image-gallery-slide .image-gallery-image, .image-gallery-content.right .image-gallery-slide .image-gallery-image {
     max-height: 100vh; 
@@ -204,69 +204,14 @@
     } 
 }
 
-.image-gallery-bullets {
-    bottom: 20px;
-    left: 0;
-    margin: 0 auto;
-    position: absolute;
-    right: 0;
-    width: 80%;
-    z-index: 4; 
-}
-
-.image-gallery-bullets .image-gallery-bullets-container {
-    margin: 0;
-    padding: 0;
-    text-align: center; 
-}
-
-.image-gallery-bullets .image-gallery-bullet {
-    appearance: none;
-    background-color: transparent;
-    border: 1px solid #fff;
-    border-radius: 50%;
-    box-shadow: 0 2px 2px #1a1a1a;
-    cursor: pointer;
-    display: inline-block;
-    margin: 0 5px;
-    outline: none;
-    padding: 5px;
-    transition: all .2s ease-out; 
-}
-@media (max-width: 768px) {
-    .image-gallery-bullets .image-gallery-bullet {
-    margin: 0 3px;
-    padding: 3px; } }
-@media (max-width: 480px) {
-    .image-gallery-bullets .image-gallery-bullet {
-    padding: 2.7px; 
-    } 
-}
-
-.image-gallery-bullets .image-gallery-bullet:focus {
-    transform: scale(1.2);
-    background: #337ab7;
-    border: 1px solid #337ab7; 
-}
-
-.image-gallery-bullets .image-gallery-bullet.active {
-    transform: scale(1.2);
-    border: 1px solid #fff;
-    background: #fff; 
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .image-gallery-bullets .image-gallery-bullet:hover {
-    background: #337ab7;
-    border: 1px solid #337ab7; 
-    }
-    .image-gallery-bullets .image-gallery-bullet.active:hover {
-    background: #337ab7; 
-    } 
-}
-
 .image-gallery-thumbnails-wrapper {
     position: relative; 
+}
+
+@media (max-width: 460px) {
+    .image-gallery-thumbnails-wrapper {
+        display: none;
+    }
 }
 
 .image-gallery-thumbnails-wrapper.thumbnails-wrapper-rtl {
@@ -328,8 +273,9 @@
 }
 
 .image-gallery-thumbnail {
+    border: none;
     display: inline-block;
-    border: 4px solid transparent;
+    border-bottom: 2px solid transparent;
     width: 100px;
     background: transparent;
     padding: 0; 
@@ -337,7 +283,7 @@
 
 @media (max-width: 768px) {
     .image-gallery-thumbnail {
-    border: 2px solid transparent;
+    border-bottom: 2px solid transparent;
     width: 81px; 
     } 
 }
@@ -352,11 +298,13 @@
 .image-gallery-thumbnail .image-gallery-thumbnail-image {
     vertical-align: middle;
     width: 100%;
+    border-radius: 5px;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
     line-height: 0; 
 }
 .image-gallery-thumbnail.active {
-    border: 2px solid #202020; 
-    border-radius: 17px;
+    border-bottom: 2px solid #bbbbbb; 
 }
 
 .image-gallery-index {

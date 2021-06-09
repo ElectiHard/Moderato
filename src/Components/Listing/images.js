@@ -1,33 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ImageGallery from "react-image-gallery";
 
-const images = [
-  {
-    original: "https://picsum.photos/id/1018/1920/1152/",
-    thumbnail: "https://picsum.photos/id/1018/1000/600/"
-  },
-  {
-    original: "https://picsum.photos/id/1015/1920/1152/",
-    thumbnail: "https://picsum.photos/id/1015/1000/600/"
-  },
-  {
-    original: "https://picsum.photos/id/1019/1920/1152/",
-    thumbnail: "https://picsum.photos/id/1019/1000/600/"
-  },
-  {
-    original: "https://picsum.photos/id/1014/1920/1152/",
-    thumbnail: "https://picsum.photos/id/1014/1000/600/"
-  },
-  {
-    original: "https://picsum.photos/id/1009/1920/1152/",
-    thumbnail: "https://picsum.photos/id/1009/1000/600/"
-  },
-];
+export default function Images(id) {
+  const [photos, setPhotos] = useState([]);
+  const [state, setState] = useState(false);
 
-export default function Images() {
-  return (
-    <>
-      <ImageGallery showPlayButton={false} items={images} />
-    </>
-  );
+  useEffect(() => {
+    fetch(`https://moderato-backend.herokuapp.com/api/v1/photos/${id}`)
+      .then(response => response.json())
+      .then(data => data.photos.map(
+        photo => {
+          setPhotos(photos => [...photos, {
+            original: photo.photoUrl,
+            thumbnail: photo.photoUrl
+          }])
+        }))
+      .then(setState(true));
+  }, [])
+  if (state === true) {
+    return (
+      <>
+        <ImageGallery showPlayButton={false} items={photos} />
+      </>
+    );
+  }
+  else {
+    return null;
+  }
 }
