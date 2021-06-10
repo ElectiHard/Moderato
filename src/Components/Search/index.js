@@ -1,23 +1,7 @@
 import navBar from "../navbar.js";
-import footer from "../footer.js";
-import { Link, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import "./styles.css";
 
 export default function Category() {
-  const [subCategories, setSubCategories] = useState([]);
-  const { id } = useParams();
-
-  function subCategoryList() {
-    return subCategories.map((element) => {
-      return (
-        <Link to={`../Listing`} className="subcategory">
-          {element.subCategoryName}
-        </Link>
-      );
-    });
-  }
-
   return (
     <>
       {navBar()}
