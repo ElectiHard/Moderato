@@ -27,7 +27,7 @@ export default function SignUp() {
   };
 
   const register = ({ username, password }) => {
-    fetch("/api/v1/users/register", {
+    fetch("https://moderato-backend.herokuapp.com/api/v1/users/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -41,7 +41,7 @@ export default function SignUp() {
   };
 
   const login = ({ username, password }) => {
-    fetch("/api/v1/users/login", {
+    fetch("https://moderato-backend.herokuapp.com/api/v1/users/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),

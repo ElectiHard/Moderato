@@ -1,9 +1,21 @@
 import navBar from "../navbar.js";
 import footer from "../footer.js";
 import "./styles.css";
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { AuthContext } from "../../Context/authContext.js";
 
 export default function Panel() {
+  const { token, setToken } = useContext(AuthContext)
+  const [tokenData, setTokenData] = useState({})
+
+  useEffect(() => {
+    try {
+      return setTokenData(JSON.parse(atob(token.split('.')[1])));
+    } catch (e) {
+      return null;
+    }
+  }, []);
+
   return (
     <>
       {navBar()}

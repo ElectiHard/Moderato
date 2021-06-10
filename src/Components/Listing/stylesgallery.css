@@ -185,6 +185,7 @@
 .image-gallery-slide .image-gallery-image {
     width: 100%;
     object-fit: contain; 
+    max-height: 100vh;
 }
 .image-gallery-slide .image-gallery-description {
     background: rgba(0, 0, 0, 0.4);

@@ -1,14 +1,13 @@
 import navBar from "../navbar.js";
 import footer from "../footer.js";
 import { FaFolderMinus, FaFolderPlus } from "react-icons/fa";
-import { IconName } from "react-icons/md";
 import "./styles.css";
-import React from "react";
+import React, { useContext, useState } from "react";
 import ImageUploading from "react-images-uploading";
 import Button from "@material-ui/core/Button";
-import ScrollContainer from "react-indiana-drag-scroll";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { AuthContext } from "../../Context/authContext";
 
 const btnChanger = (a) => {
   if (a != 5) {
@@ -19,8 +18,17 @@ const btnChanger = (a) => {
 };
 
 export default function Creator() {
-  const [images, setImages] = React.useState([]);
+  const token = useContext(AuthContext)
+  const [images, setImages] = useState([]);
   const maxNumber = 5;
+
+  const createListing = ({ username, password }) => {
+    fetch("https://moderato-backend.herokuapp.com/api/v1/listings/create", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Authication": token },
+      body: JSON.stringify({ username, password }),
+    });
+  };
 
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
@@ -75,6 +83,7 @@ export default function Creator() {
                   className="photo-upload-btn"
                   onClick={onImageUpload}
                   {...dragProps}
+                  disabled={imageList.length == 5}
                 >
                   {btnChanger(imageList.length)}
                 </button>
@@ -118,9 +127,12 @@ export default function Creator() {
                   .max(11, "Too Long!")
                   .required("Required"),
                 city: Yup.string().required("City is required"),
-                price: Yup.string().required("U sure about that?"),
+                price: Yup.number()
+                  .min(0, "Can't go below 0!")
+                  .max(1000000000, "Ya sure it's a right site for that?")
+                  .required("Price is required"),
               })}
-              //onSubmit={}
+              onSubmit={createListing}
               render={({
                 errors,
                 status,
@@ -211,13 +223,12 @@ export default function Creator() {
                       className="creator-invalid-feedback"
                     />
                   </div>
+                  <Button className="submit-sign-up-button" type="submit">
+                    <div>Publish</div>
+                  </Button>
                 </Form>
               )}
             />
-
-            <Button className="submit-sign-up-button">
-              <div>Publish</div>
-            </Button>
           </div>
         </div>
       </div>

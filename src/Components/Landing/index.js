@@ -31,6 +31,21 @@ export default function Landing() {
         )
     }
 
+    function categoryMobile() {
+        return (
+            categoriesList.map(element => {
+                return (
+                    <Link to={`/Category/${element.categoryId}`} className="category"
+                        dangerouslySetInnerHTML={{
+                            __html: element.icon +
+                                `<div class="tooltiptext">${element.categoryName}</div>`
+                        }}>
+                    </Link>
+                )
+            })
+        )
+    }
+
     return (
         <>
             {navBar()}

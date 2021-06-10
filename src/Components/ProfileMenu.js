@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import { FaUser, FaUserPlus } from 'react-icons/fa';
@@ -7,6 +7,7 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import { AuthContext } from "../Context/authContext";
 
 const StyledMenu = withStyles({
   paper: {
@@ -32,6 +33,7 @@ const StyledMenu = withStyles({
 
 export default function CustomizedMenus() {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const { token, setToken } = useContext(AuthContext);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -75,10 +77,22 @@ export default function CustomizedMenus() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        {createMenuItem(FaUserPlus(), 'Sign Up', 'SignUp/0')}
-        {createMenuItem(FaUser(), 'Sign In', 'SignUp/1')}
-        {createMenuItem(MdPlaylistAdd(), 'Creator', 'Creator')}
-        {createMenuItem(MdExitToApp(), 'Log Out', 'Creator')}
+        {token ? createMenuItem(MdPlaylistAdd(), 'Creator', 'Creator') : createMenuItem(FaUserPlus(), 'Sign Up', 'SignUp/0')}
+        {token ?
+          <>
+            <MenuItem onClick={() => {
+              handleClose();
+              setTimeout(() => setToken(), 200)
+            }}>
+              <ListItemIcon style={{ color: "#202020", fontSize: "24px" }}>
+                <MdExitToApp />
+              </ListItemIcon>
+              <ListItemText>
+                Log Out
+            </ListItemText>
+            </MenuItem>
+            {createMenuItem(MdPlaylistAdd(), 'User Panel', 'Panel')}
+          </> : createMenuItem(FaUser(), 'Sign In', 'SignUp/1')}
       </StyledMenu>
     </div>
   );
