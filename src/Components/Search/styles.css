@@ -1,0 +1,42 @@
+.search {
+  width: 900px;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  gap: 30px;
+}
+
+@media screen and (max-width: 936px) {
+  .search {
+    width: auto;
+    margin: 0;
+  }
+}
+
+/**************/
+
+.whatever-goes-here {
+  border-radius: 15px;
+  height: 400px;
+  flex: 1 1 30%;
+  background-color: #ffffff;
+  padding: 15px;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);
+}
+
+.search-result {
+  border-radius: 15px;
+  height: auto;
+  flex: 1 1 70%;
+  background-color: #ffffff;
+  padding: 15px;
+  box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.4);
+}
+
+.search-result-module {
+  width: 100%;
+  height: 150px;
+  background-color: #eeeeee;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}

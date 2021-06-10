@@ -8,6 +8,7 @@ import Creator from "./Components/Creator";
 import Listing from "./Components/Listing";
 import Category from "./Components/Category";
 import Panel from "./Components/Panel";
+import Search from "./Components/Search";
 import { AuthContext } from "./Context/authContext";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <Route exact path="/Creator" component={Creator} />
               <Route exact path="/Listing/:id" component={Listing} />
               <Route exact path="/Panel" component={Panel} />
+              <Route exact path="/Search" component={Search} />
               <Route exact path="/Category/:id" component={Category} />
               <Route component={NotFound} />
             </Switch>
