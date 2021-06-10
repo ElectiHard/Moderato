@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom'
-import { GiMagnifyingGlass } from "react-icons/gi";
+import IconButton from "@material-ui/core/IconButton";
+import TextField from '@material-ui/core/TextField';
 import CustomizedMenus from "./ProfileMenu"
+import SearchIcon from '@material-ui/icons/Search';
+import InputAdornment from '@material-ui/core/InputAdornment';
+
+
 import '../App.css';
+import './navbar.css'
 
 export default function navBar() {
     return (
@@ -10,12 +16,26 @@ export default function navBar() {
             <Link to="/" className="logo">
                 Moderato
             </Link>
-            <input
-                className="searchbar"
+            <div className="searchbar">
+            <TextField
+                className="searchbar inputRounded MuiOutlinedInput-root"
                 placeholder="Type to search for products"
-                type="search"
-            >
-            </input>
+                className="inputRounded"
+                placeholder="Search"
+                variant="outlined"
+                size="small"
+                fullWidth
+                margin="none"
+                InputProps={{
+                    startAdornment:
+                    <InputAdornment>
+                    <IconButton>
+                      <SearchIcon />
+                    </IconButton>
+                  </InputAdornment>,
+                  }}
+            />
+            </div>
             <div className="icons">
                 <div classname="login">
                     <CustomizedMenus />

@@ -1,0 +1,8 @@
+.inputRounded .MuiOutlinedInput-root {
+    border-radius: 20px;
+    margin-top: -4px;
+    padding-left: 10px;
+  }
+.inputRounded:focus {
+    outline-width: 0;
+}
