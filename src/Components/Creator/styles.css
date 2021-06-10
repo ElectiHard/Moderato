@@ -79,26 +79,26 @@
 }
 
 .photo-upload-btn {
-  border-radius: 15px;
-  width: calc(30% - 12px);
+  width: 30%;
   height: 45%;
   border: dashed 4px #dddddd;
   background-color: transparent;
+  border-radius: 15px;
   cursor: pointer;
 }
 
 .image-item {
-  width: 30%;
-  height: 45%;
+  width: calc(30% + 12px);
+  height: calc(45% + 2px);
   border: dashed 4px #dddddd;
   border-radius: 15px;
   display: flex;
-  justify-content: center;
 }
 
-.creator img {
-  width: auto;
-  border-radius: 15px;
+.image-item img {
+  object-fit: contain;
+  width: 100%;
+  border-radius: 11px;
 }
 
 .remove-btn {

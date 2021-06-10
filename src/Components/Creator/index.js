@@ -1,6 +1,7 @@
 import navBar from "../navbar.js";
 import footer from "../footer.js";
 import { FaFolderMinus, FaFolderPlus } from "react-icons/fa";
+import { IconName } from "react-icons/md";
 import "./styles.css";
 import React from "react";
 import ImageUploading from "react-images-uploading";
@@ -36,6 +37,7 @@ export default function Creator() {
             <label>Title</label>
             <input
               type="text"
+              required
               id="title-input"
               name="title-input"
               placeholder="Title e.g siodło z dyskontu"
@@ -52,46 +54,44 @@ export default function Creator() {
           </div>
         </div>
         <div className="creator-pictures">
-          <ScrollContainer className="drag-container">
-            <ImageUploading
-              multiple
-              value={images}
-              onChange={onChange}
-              maxNumber={maxNumber}
-              dataURLKey="data_url"
-              resolutionType="ratio"
-            >
-              {({
-                imageList,
-                onImageUpload,
-                onImageRemove,
-                isDragging,
-                dragProps,
-              }) => (
-                // write your building UI
-                <>
-                  <button
-                    className="photo-upload-btn"
-                    onClick={onImageUpload}
-                    {...dragProps}
-                  >
-                    {btnChanger(imageList.length)}
-                  </button>
-                  {imageList.map((image, index) => (
-                    <div key={index} className="image-item">
-                      <img src={image["data_url"]} alt="" width="33%" />
-                      <button
-                        onClick={() => onImageRemove(index)}
-                        className="remove-btn"
-                      >
-                        Remove
-                      </button>
-                    </div>
-                  ))}
-                </>
-              )}
-            </ImageUploading>
-          </ScrollContainer>
+          <ImageUploading
+            multiple
+            value={images}
+            onChange={onChange}
+            maxNumber={maxNumber}
+            dataURLKey="data_url"
+            resolutionType="ratio"
+          >
+            {({
+              imageList,
+              onImageUpload,
+              onImageRemove,
+              isDragging,
+              dragProps,
+            }) => (
+              // write your building UI
+              <>
+                <button
+                  className="photo-upload-btn"
+                  onClick={onImageUpload}
+                  {...dragProps}
+                >
+                  {btnChanger(imageList.length)}
+                </button>
+                {imageList.map((image, index) => (
+                  <div key={index} className="image-item">
+                    <img src={image["data_url"]} alt="" />
+                    <button
+                      onClick={() => onImageRemove(index)}
+                      className="remove-btn"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                ))}
+              </>
+            )}
+          </ImageUploading>
         </div>
         <div className="description">
           <textarea
