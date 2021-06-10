@@ -24,9 +24,9 @@ export default function Category() {
       <div className="search">
         <div className="whatever-goes-here">stuff?</div>
         <div className="search-result">
-          <div className="search-result-module">we work?</div>
-          <div className="search-result-module">we work?</div>
-          <div className="search-result-module">we work?</div>
+          <div className="search-result-module">img, title, price</div>
+          <div className="search-result-module">img, title, price</div>
+          <div className="search-result-module">img, title, price</div>
         </div>
       </div>
     </>
