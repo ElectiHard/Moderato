@@ -25,11 +25,7 @@ function App() {
               <Route exact path="/Creator" component={Creator} />
               <Route exact path="/Listing/:id" component={Listing} />
               <Route exact path="/Panel" component={Panel} />
-<<<<<<< Updated upstream
               <Route exact path="/Search" component={Search} />
-=======
-              <Route exact path="/Search/:query" component={Search} />
->>>>>>> Stashed changes
               <Route exact path="/Category/:id" component={Category} />
               <Route component={NotFound} />
             </Switch>
