@@ -82,7 +82,7 @@ gsap.to("#glassShine", {
 
 export default function AstronautSvg(){
     return(
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
+    <svg className="svg-404" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 800 600">
     <g>
       <defs>
