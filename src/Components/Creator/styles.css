@@ -15,6 +15,7 @@
 
 .creator-header {
   display: flex;
+  flex-wrap: wrap;
   padding: 10px 20px 30px;
   border-radius: 15px;
   margin-bottom: 20px;
@@ -31,7 +32,8 @@
 }
 
 .creator-category {
-  flex: 1 1 40%;
+  flex: 1 1 30%;
+  min-width: 150px;
 }
 
 .creator-header label {
@@ -65,6 +67,7 @@
   justify-content: start;
   gap: 10px;
   color: #ffffff;
+  overflow-y: auto;
   height: 400px;
   border-radius: 15px;
   margin-bottom: 20px;
@@ -114,7 +117,7 @@
 
 .description {
   display: flex;
-  flex-wrap: inherit;
+  flex-wrap: wrap;
   padding: 30px 10px;
   gap: 10px;
   color: #ffffff;
@@ -125,7 +128,7 @@
 
 .description textarea {
   flex: 1 1 60%;
-  height: auto;
+  min-height: 200px;
   border: none;
   outline: none;
   font-family: "Roboto", sans-serif;
@@ -139,41 +142,40 @@
 /****************/
 
 .contact-location {
-  flex: 1 1 40%;
+  flex: 1 1 30%;
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch;
   gap: 10px;
 }
 
-.temp1 {
-  width: 100%;
-}
-
-.creator-form {
-  width: 100%;
-  padding: 7px;
-}
-
 .creator-form-control {
+  flex: 1 1 100%;
+  display: flex;
+}
+.creator-form-control input, .creator-form-control textarea, .creator-form-control select{
+  margin-bottom: 7px;
+  flex-basis: 100%;
   border: 1px solid #eee;
   padding: 10px 15px;
-  width: auto;
   border-radius: 20px;
   outline: none;
   background-color: rgb(241, 241, 241);
   color: black;
+  z-index: 2;
 }
-.creator-form-control:focus {
+
+.creator-form-control input:focus, .creator-form-control textarea:focus, .creator-form-control select:focus {
   border: 1px solid #083d77;
 }
 
 .creator-invalid-feedback {
+  padding-top: 39px;
   padding-left: 10px;
   user-select: none;
   color: red;
   font-size: 12px;
   position: absolute;
+  z-index: 1;
 }
 /****************/ /***********************/
 /*.dropdown {

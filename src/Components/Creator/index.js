@@ -2,7 +2,7 @@ import navBar from "../navbar.js";
 import footer from "../footer.js";
 import { FaFolderMinus, FaFolderPlus } from "react-icons/fa";
 import "./styles.css";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import ImageUploading from "react-images-uploading";
 import Button from "@material-ui/core/Button";
 import { Formik, Field, Form, ErrorMessage } from "formik";
@@ -18,16 +18,48 @@ const btnChanger = (a) => {
 };
 
 export default function Creator() {
-  const token = useContext(AuthContext);
+  const [categoriesList, setCategoriesList] = useState([]);
+  const { token } = useContext(AuthContext);
   const [images, setImages] = useState([]);
   const maxNumber = 5;
 
-  const createListing = ({ username, password }) => {
+  useEffect(() => {
+    fetch(`https://moderato-backend.herokuapp.com/api/v1/categories/`)
+      .then(response => response.json())
+      .then(data => setCategoriesList(data.subCategories));
+  }, [])
+
+  function categoriesOptions() {
+    return (
+      categoriesList.map(element => {
+        return (
+          <option value={element.subCategoryId} label={element.subCategoryName} />
+        )
+      })
+    )
+  }
+
+  const createListing = ({ name, subCategoryId, description, email, phone, price, city }) => {
+    const contacts = JSON.stringify({ email, phone, city });
     fetch("https://moderato-backend.herokuapp.com/api/v1/listings/create", {
       method: "POST",
-      headers: { "Content-Type": "application/json", Authication: token },
-      body: JSON.stringify({ username, password }),
-    });
+      headers: { "Content-Type": "application/json", "Authorization": `bajojajo ${token}` },
+      body: JSON.stringify({ name, subCategoryId, description, contacts, price }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        images.map((image) => {
+          const formData = new FormData();
+          formData.append('file', image.file);
+          console.log(image.file)
+          fetch(`https://moderato-backend.herokuapp.com/api/v1/photos/${data.listingId}`, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Authorization": `bajojajo ${token}` },
+            body: formData
+          })
+        })
+      })
   };
 
   const onChange = (imageList, addUpdateIndex) => {
@@ -43,8 +75,8 @@ export default function Creator() {
       <div className="creator">
         <Formik
           initialValues={{
-            title: "",
-            category: "",
+            name: "",
+            subcategory: "",
             description: "",
             email: "",
             phone: "",
@@ -52,8 +84,11 @@ export default function Creator() {
             price: "",
           }}
           validationSchema={Yup.object().shape({
-            title: Yup.string().max(100, "Too long!"),
-            category: Yup.string(),
+            name: Yup.string()
+              .max(100, "Too long!")
+              .required("Title is required"),
+            subCategoryId: Yup.number()
+              .required("Subcategory is required"),
             description: Yup.string().max(2500, "Too long!"),
             email: Yup.string()
               .email("Invalid email")
@@ -83,43 +118,46 @@ export default function Creator() {
               <Form onSubmit={handleSubmit} className="creator-header">
                 <div className="title">
                   <label>Title</label>
-                  <Field
-                    name="title"
-                    type="text"
-                    placeholder="Title e.g siodło z dyskontu"
-                    className={
-                      "creator-form-control" +
-                      (errors.title && touched.title ? " is-invalid" : "")
-                    }
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.title}
-                  />
-                  <ErrorMessage
-                    name="title"
-                    component="div"
-                    className="creator-invalid-feedback"
-                  />
+                  <div className="creator-form-control">
+                    <Field
+                      name="name"
+                      type="text"
+                      placeholder="Title e.g siodło z dyskontu"
+                      className={
+                        (errors.title && touched.title ? " is-invalid" : "")
+                      }
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.name}
+                    />
+                    <ErrorMessage
+                      name="name"
+                      component="div"
+                      className="creator-invalid-feedback"
+                    />
+                  </div>
                 </div>
                 <div className="creator-category">
-                  <label>Category</label>
-                  <Field
-                    name="category"
-                    type="text"
-                    placeholder="Title e.g siodło z dyskontu"
-                    className={
-                      "creator-form-control" +
-                      (errors.category && touched.category ? " is-invalid" : "")
-                    }
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    value={values.category}
-                  />
-                  <ErrorMessage
-                    name="title"
-                    component="div"
-                    className="creator-invalid-feedback"
-                  />
+                  <label>Subcategory</label>
+                  <div className="creator-form-control">
+                    <Field
+                      name="subCategoryId"
+                      component="select"
+                      className={
+                        (errors.category && touched.category ? " is-invalid" : "")
+                      }
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.subCategoryId}
+                    >
+                      {categoriesOptions()}
+                    </Field>
+                    <ErrorMessage
+                      name="subCategoryId"
+                      component="div"
+                      className="creator-invalid-feedback"
+                    />
+                  </div>
                 </div>
               </Form>
               <div className="creator-pictures">
@@ -165,16 +203,14 @@ export default function Creator() {
               </div>
               <Form>
                 <div className="description">
+
                   <Field
-                    name="description-input"
+                    name="description"
                     type="text"
                     component="textarea"
                     placeholder="Title e.g siodło z dyskontu"
                     className={
-                      "creator-form-control" +
-                      (errors.description && touched.description
-                        ? " is-invalid"
-                        : "")
+                      (errors.description && touched.description ? " is-invalid" : "")
                     }
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -185,14 +221,14 @@ export default function Creator() {
                     component="div"
                     className="creator-invalid-feedback"
                   />
+
                   <div className="contact-location">
-                    <div className="creator-form">
+                    <div className="creator-form-control">
                       <Field
                         name="email"
                         type="text"
                         placeholder="email"
                         className={
-                          "creator-form-control" +
                           (errors.email && touched.email ? " is-invalid" : "")
                         }
                         onChange={handleChange}
@@ -205,14 +241,12 @@ export default function Creator() {
                         className="creator-invalid-feedback"
                       />
                     </div>
-
-                    <div className="creator-form">
+                    <div className="creator-form-control">
                       <Field
                         name="phone"
                         type="number"
                         placeholder="+48..."
                         className={
-                          "creator-form-control" +
                           (errors.phone && touched.phone ? " is-invalid" : "")
                         }
                         onChange={handleChange}
@@ -226,13 +260,12 @@ export default function Creator() {
                       />
                     </div>
 
-                    <div className="creator-form">
+                    <div className="creator-form-control">
                       <Field
                         name="city"
                         type="text"
                         placeholder="city"
                         className={
-                          "creator-form-control" +
                           (errors.city && touched.city ? " is-invalid" : "")
                         }
                         onChange={handleChange}
@@ -245,14 +278,12 @@ export default function Creator() {
                         className="creator-invalid-feedback"
                       />
                     </div>
-
-                    <div className="creator-form">
+                    <div className="creator-form-control">
                       <Field
                         name="price"
                         type="number"
                         placeholder="price"
                         className={
-                          "creator-form-control" +
                           (errors.price && touched.price ? " is-invalid" : "")
                         }
                         onChange={handleChange}
