@@ -51,7 +51,6 @@ export default function Creator() {
         images.map((image) => {
           const formData = new FormData();
           formData.append('file', image.file);
-          console.log(image.file)
           fetch(`https://moderato-backend.herokuapp.com/api/v1/photos/${data.listingId}`, {
             method: "POST",
             mode: "no-cors",
