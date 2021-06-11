@@ -1,23 +1,4 @@
 import navBar from "../navbar.js";
-<<<<<<< Updated upstream
-import "./styles.css";
-
-export default function Category() {
-  return (
-    <>
-      {navBar()}
-      <div className="search">
-        <div className="whatever-goes-here">stuff?</div>
-        <div className="search-result">
-          <div className="search-result-module">img, title, price</div>
-          <div className="search-result-module">img, title, price</div>
-          <div className="search-result-module">img, title, price</div>
-        </div>
-      </div>
-    </>
-  );
-}
-=======
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { AuthContext } from "../../Context/authContext";
@@ -58,4 +39,3 @@ export default function Category() {
         </>
     );
 }
->>>>>>> Stashed changes
